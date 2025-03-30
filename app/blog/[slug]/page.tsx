@@ -82,9 +82,13 @@ export default function BlogPost() {
   const [htmlContent, setHtmlContent] = useState('');
 
   useEffect(() => {
-    setHtmlContent(marked(post.content));
+    async function parseMarkdown() {
+      const html = await marked(post.content);
+      setHtmlContent(html);
+    }
+    parseMarkdown();
   }, [post.content]);
-
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50" dir="rtl">
       {/* Hero Section */}
