@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Face */
+/* Replace the existing @font-face declarations with these */
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/fonts/YekanBakhFaNum-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/fonts/YekanBakhFaNum-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/fonts/YekanBakhFaNum-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/fonts/YekanBakhFaNum-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/fonts/YekanBakhFaNum-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'YekanBakh';
+  src: url('/fonts/YekanBakhFaNum-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+  --button-color: 70, 152, 143;
+  --nav-text: 155, 155, 155;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 172 54% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 172 54% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 172 54% 43%;
+    --muted-foreground: 0 0% 0%;
+    --accent: 172 54% 43%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 172 54% 43%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    
+    font-family: 'YekanBakh', sans-serif !important;
+  }
+  
+}
+
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  width: 100%;
+  background: #FFFFFF;
+}
+
+.subjects-section {
+  position: relative;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.subjects-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(70, 152, 143, 0.12) 0%,
+    rgba(70, 152, 143, 0.08) 30%,
+    rgba(70, 152, 143, 0.02) 60%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.features-section {
+  position: relative;
+  background: #FFFFFF;
+}
+
+.platform-section {
+  position: relative;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+
+.platform-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 70% 20%, rgba(70, 152, 143, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 30% 80%, rgba(70, 152, 143, 0.08) 0%, transparent 35%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.reviews-section {
+  position: relative;
+  background: #FFFFFF;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(70, 152, 143, 0.1);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 1);
+  border-color: rgba(70, 152, 143, 0.2);
+}
+
+.gradient-text {
+  color: #000000;
+}
+
+/* Support section styles */
+.support-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(248, 248, 248, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/* Ripple effect styles */
+.ripple-effect {
+  aspect-ratio: 1;
+  will-change: transform, opacity;
+}
+
+/* Swiper custom styles */
+.swiper-pagination-bullet {
+  background: rgba(70, 152, 143, 0.5) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #46988F !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #46988F !important;
+}
+
+.swiper-slide-active {
+  z-index: 2;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+[dir="rtl"] .swiper-button-next {
+  transform: rotate(180deg);
+}
+
+[dir="rtl"] .swiper-button-prev {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple-effect {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    padding-top: 4.5rem; /* فاصله مناسب برای جلوگیری از هم‌پوشانی در موبایل */
+  }
+}
+/* Justify all paragraph and list text */
+p, li, h1, h2, h3, h4, h5, h6 {
+  text-align: justify;
+}
