@@ -122,7 +122,7 @@ export default function About() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -159,7 +159,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
 {/* Benefits Section */}
 <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
