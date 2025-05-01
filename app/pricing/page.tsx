@@ -12,8 +12,8 @@ const plans = [
     description: 'مناسب برای شروع مسیر موفقیت',
     icon: <Sparkles className="h-6 w-6" />,
     features: [
-      'دسترسی به تمام دروس ',
-      'دسترسی به تمام کنکور ها ',
+      'دسترسی به تمام دروس',
+      'دسترسی به تمام کنکورها',
       'دسترسی به تمام امتحانات نهایی',
       'هوش مصنوعی پایه برای رفع اشکال',
       'پاسخ به تمامی سوالات درسی',
@@ -28,10 +28,10 @@ const plans = [
     icon: <Rocket className="h-6 w-6" />,
     features: [
       'تمام امکانات پلن پایه',
-      'هوش مصنوعی پیشرفته تر با قابلیت تحلیل عمیق',
-      'طراحی آزمون های شبیه‌سازی شده کنکور توسط هوش مصنوعی',
+      'هوش مصنوعی پیشرفته‌تر با قابلیت تحلیل عمیق',
+      'طراحی آزمون‌های شبیه‌سازی شده کنکور توسط هوش مصنوعی',
       'گزارش‌های روزانه با جزئیات کامل',
-      'امکان پرسیدن تعداد سوالات بیش تر'
+      'امکان پرسیدن تعداد سوالات بیشتر'
     ],
     popular: true
   }
@@ -40,6 +40,7 @@ const plans = [
 export default function Pricing() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50" dir="rtl">
+      
       {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <Image
@@ -49,8 +50,8 @@ export default function Pricing() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20" />
-        <div className="absolute inset-0 flex items-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 z-10" />
+        <div className="absolute inset-0 flex items-center z-20">
           <div className="container mx-auto px-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -70,7 +71,7 @@ export default function Pricing() {
       </section>
 
       {/* Pricing Cards */}
-      <section className=" mb-20 mt-20 relative z-10">
+      <section className="mt-20 mb-20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
@@ -97,11 +98,11 @@ export default function Pricing() {
                   `}>
                     {plan.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-800">{plan.name}</h3>
-                  <p className="text-gray-600 mb-4">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{plan.name}</h3>
+                  <p className="text-gray-700 mb-4">{plan.description}</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-4xl font-bold text-gray-800">{plan.price}</span>
-                    <span className="text-gray-500">تومان / ماه</span>
+                    <span className="text-gray-600">تومان / ماه</span>
                   </div>
                 </div>
 
@@ -111,7 +112,7 @@ export default function Pricing() {
                       <div className="w-5 h-5 rounded-full bg-[#46988F]/10 flex items-center justify-center flex-shrink-0">
                         <Check className="h-3 w-3 text-[#46988F]" />
                       </div>
-                      <span className="text-gray-600">{feature}</span>
+                      <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
                 </div>
@@ -131,26 +132,9 @@ export default function Pricing() {
         </div>
       </section>
 
-    
-
-      {/* Call to Action */}
-      <section className="py-5">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="bg-[#46988F] rounded-2xl p-12 mb-10 text-center text-white max-w-4xl mx-auto"
-          >
-            <h2 className="text-center text-3xl font-bold mb-4">هنوز مطمئن نیستید؟</h2>
-            <p className=" text-center text-white/90 mb-8 text-lg">
-              با مشاوران ما صحبت کنید تا بهترین پلن را برای شما پیشنهاد دهند
-            </p>
-            <Button className="bg-white text-[#46988F] hover:bg-white/90 px-8 py-6 text-lg">
-              مشاوره 
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      {/* Footer */}
+      <footer className="bg-gray-50 text-center text-sm text-gray-400 py-8 border-t border-gray-200">
+      </footer>
     </div>
   );
 }

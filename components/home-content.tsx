@@ -612,7 +612,7 @@ export default function HomeContent() {
                     افتخار میزبان بیش از ۱۰,۰۰۰ دانش‌آموز فعال هستیم.
                   </p>
                 </div>
-                <div className="flex items-center justify-center h-full">
+                <div className="flex items-center justify-center h-full text-gray-800">
                   <ul className="space-y-4">
                     <li className="flex items-center space-x-3 space-x-reverse">
                       <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">

@@ -160,37 +160,6 @@ export default function About() {
         </div>
       </section>
 
-{/* Benefits Section */}
-<section className="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className=" text-center text-3xl font-bold mb-4"
-            >
-              مزایای استفاده از پرسینو
-            </motion.h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
-              >
-                <div  className="text-2xl mb-10">{benefit.icon}</div>
-                <p className=" text-xl text-gray-600 text-center">{benefit.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-
       
 
       {/* Call to Action */}

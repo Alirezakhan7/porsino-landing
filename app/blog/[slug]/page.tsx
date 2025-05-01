@@ -142,12 +142,12 @@ export default function BlogPost() {
 
       {/* Content Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 ">
           <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center space-x-2 space-x-reverse mb-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg text-gray-800">
+              <div className="flex items-center space-x-2 space-x-reverse mb-8 ">
                 <Tag className="h-5 w-5 text-[#46988F]" />
-                <span className="text-[#46988F]">{post.category}</span>
+                <span className="text-[#46988F] ">{post.category}</span>
               </div>
               <div
                 className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-[#46988F] prose-strong:text-gray-900"

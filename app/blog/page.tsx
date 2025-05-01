@@ -146,7 +146,7 @@ export default function Blog() {
                       <Tag className="h-4 w-4 text-[#46988F]" />
                       <span className="text-sm text-[#46988F]">{post.category}</span>
                     </div>
-                    <h2 className="text-xl font-bold mb-2 line-clamp-2">{post.title}</h2>
+                    <h2 className="text-l font-bold mb-2 line-clamp-2 text-gray-900">{post.title}</h2>
                     <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
                     <div className="flex items-center justify-between text-sm text-gray-500">
                       <div className="flex items-center space-x-2 space-x-reverse">
