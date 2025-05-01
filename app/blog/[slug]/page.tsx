@@ -21,7 +21,7 @@ interface BlogPost {
 }
 
 const samplePost: BlogPost = {
-  title: 'چگونه برای کنکور برنامه‌ریزی کنیم؟',
+  title: 'چگونه برای کنکور کارشناسی ارشد برنامه‌ریزی کنیم؟',
   content: `
 # برنامه‌ریزی اصولی برای کنکور
 

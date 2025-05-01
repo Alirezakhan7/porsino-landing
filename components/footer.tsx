@@ -25,18 +25,18 @@ const termsLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-blue-500/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-12" dir="rtl">
-      <div className="container mx-auto px-6">
+    <footer className="bg-[#46988F] text-white" dir="rtl">
+      <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1 - Brand and Social */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2 space-x-reverse">
-              <Brain className="h-8 w-8 text-blue-500" />
-              <span className="text-xl font-bold gradient-text">پرسینو</span>
+              <Brain className="h-8 w-8 text-white" />
+              <span className="text-xl font-bold text-white">پرسینو</span>
             </div>
-            <p className="text-gray-400">SUPPORT@PORSINOAI.IR</p>
+            <p className="text-white/90">SUPPORT@PORSINOAI.IR</p>
             <div>
-              <h3 className="text-sm font-semibold mb-4">شبکه‌های اجتماعی</h3>
+              <h3 className="text-sm font-semibold text-white mb-4">شبکه‌های اجتماعی</h3>
               <div className="flex space-x-4 space-x-reverse">
                 {socialLinks.map((social) => (
                   <Link
@@ -44,7 +44,7 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-white/80 hover:text-white transition-colors"
                   >
                     <social.icon className="h-5 w-5" />
                     <span className="sr-only">{social.label}</span>
@@ -56,13 +56,13 @@ export function Footer() {
 
           {/* Column 2 - Guide */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">راهنما</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">راهنما</h3>
             <ul className="space-y-3">
               {guideLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-white/80 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -73,13 +73,13 @@ export function Footer() {
 
           {/* Column 3 - Terms & Conditions */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">قوانین و مقررات</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">قوانین و مقررات</h3>
             <ul className="space-y-3">
               {termsLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-blue-500 transition-colors"
+                    className="text-white/80 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -89,8 +89,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-blue-500/20">
-          <p className="text-center text-gray-400 text-sm">
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <p className="text-center text-white/80 text-sm">
             © {new Date().getFullYear()} پرسینو. تمامی حقوق محفوظ است.
           </p>
         </div>

@@ -76,7 +76,7 @@ export default function Blog() {
       {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32"
+          src="/assets/Log2.png"
           alt="وبلاگ پرسینو"
           fill
           className="object-cover"
@@ -110,10 +110,10 @@ export default function Blog() {
               <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <Input
                 type="text"
-                placeholder="جستجو در مقالات..."
+                placeholder=" جست‌وجو در مقالات پرسینو..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pr-10 text-right"
+                className="pr-10 text-right placeholder:text-gray-400"
               />
             </div>
           </div>

@@ -1,55 +1,78 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Check, Users, Trophy, Clock, Target } from 'lucide-react';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Check, Users, Trophy, Clock, Target, Sparkles, Zap, Award, Lightbulb } from "lucide-react";
+import CtaSection from "@/components/Section";
 
 const stats = [
-  { number: '۵۰۰+', label: 'دانش‌آموز فعال' },
-  { number: '۹۸٪', label: 'رضایت کاربران' },
-  { number: '۲۴/۷', label: 'پشتیبانی آنلاین' },
-  { number: '۹۴۸۸۵+', label: 'پرسش و پاسخ' }
+  { number: "۵۰۰+", label: "دانش‌آموز فعال" },
+  { number: "۹۸٪", label: "رضایت کاربران" },
+  { number: "۲۴/۷", label: "پشتیبانی آنلاین" },
+  { number: "۹۴۸۸۵+", label: "پرسش و پاسخ" },
 ];
 
 const features = [
   {
     icon: <Users className="h-6 w-6" />,
-    title: 'تیم متخصص',
-    description: 'متشکل از برترین اساتید و متخصصان آموزشی کشور'
+    title: "تیم متخصص",
+    description: "متشکل از برترین اساتید و متخصصان آموزشی کشور",
   },
   {
     icon: <Trophy className="h-6 w-6" />,
-    title: 'نتایج درخشان',
-    description: 'کسب رتبه‌های برتر توسط دانش‌آموزان پرسینو'
+    title: "نتایج درخشان",
+    description: "کسب رتبه‌های برتر توسط دانش‌آموزان پرسینو",
   },
   {
     icon: <Clock className="h-6 w-6" />,
-    title: 'یادگیری سریع',
-    description: 'بهره‌گیری از متدهای نوین آموزشی و هوش مصنوعی'
+    title: "یادگیری سریع",
+    description: "بهره‌گیری از متدهای نوین آموزشی و هوش مصنوعی",
   },
   {
     icon: <Target className="h-6 w-6" />,
-    title: 'برنامه شخصی',
-    description: 'ارائه برنامه مطالعاتی کاملاً شخصی‌سازی شده'
-  }
+    title: "برنامه شخصی",
+    description: "ارائه برنامه مطالعاتی کاملاً شخصی‌سازی شده",
+  },
 ];
 
 const advantages = [
-  'استفاده از هوش مصنوعی پیشرفته',
-  'پشتیبانی ۲۴ ساعته',
-  'محتوای آموزشی به‌روز',
-  'گزارش‌گیری هوشمند',
-  'رابط کاربری ساده و کاربردی',
-  'قیمت‌گذاری منصفانه'
+  "هوش مصنوعی پیشرفته",
+  "پشتیبانی ۲۴ ساعته",
+  "محتوای آموزشی به‌روز",
+  "گزارش‌گیری هوشمند",
+  "رابط کاربری ساده و کاربردی",
+  "قیمت‌گذاری منصفانه",
+];
+
+const benefits = [
+  {
+    icon: <Sparkles size={60}  className="text-primary" />,
+    text: "یادگیری سریع‌تر و عمیق‌تر ",
+  },
+  {
+    icon: <Zap size={60} className=" text-primary" />,
+    text: "افزایش تمرکز و بازدهی مطالعه",
+  },
+  {
+    icon: <Award size={60} className="text-primary" />,
+    text: "پیشرفت تحصیلی تضمین شده",
+  },
+  {
+    icon: <Lightbulb size={60} className="text-primary" />,
+    text: "صرفه‌جویی در زمان و انرژی",
+  },
 ];
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50" dir="rtl">
+    <div
+      className="min-h-screen bg-gradient-to-b from-white to-gray-50"
+      dir="rtl"
+    >
       {/* Hero Section */}
       <section className="relative h-[500px] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+          src="/assets/Log2.png"
           alt="تیم پرسینو"
           fill
           className="object-cover"
@@ -68,7 +91,8 @@ export default function About() {
                 پیشگام در آموزش هوشمند
               </h1>
               <p className="text-xl text-white/90">
-                ما در پرسینو با ترکیب تجربه و تکنولوژی، آینده آموزش را متحول می‌کنیم
+                ما در پرسینو با ترکیب تجربه و تکنولوژی، آینده آموزش را متحول
+                می‌کنیم
               </p>
             </motion.div>
           </div>
@@ -87,7 +111,9 @@ export default function About() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-[#46988F] mb-2">{stat.number}</div>
+                <div className="text-4xl font-bold text-[#46988F] mb-2">
+                  {stat.number}
+                </div>
                 <div className="text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
@@ -106,10 +132,16 @@ export default function About() {
             >
               <h2 className="text-3xl font-bold text-gray-900">داستان ما</h2>
               <p className="text-gray-600 leading-relaxed">
-                پرسینو در سال ۱۴۰۲ با هدف ارائه خدمات آموزشی هوشمند و شخصی‌سازی شده متولد شد. ما معتقدیم هر دانش‌آموز مسیر یادگیری منحصر به فرد خود را دارد و با استفاده از هوش مصنوعی، این مسیر را برای هر فرد بهینه‌سازی می‌کنیم.
+                پرسینو در سال ۱۴۰۲ با هدف ارائه خدمات آموزشی هوشمند و شخصی‌سازی
+                شده متولد شد. ما معتقدیم هر دانش‌آموز مسیر یادگیری منحصر به فرد
+                خود را دارد و با استفاده از هوش مصنوعی، این مسیر را برای هر فرد
+                بهینه‌سازی می‌کنیم.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                امروز، پرسینو به یکی از پیشروترین پلتفرم‌های آموزشی در ایران تبدیل شده است. با بیش از ۵۰۰ دانش‌آموز فعال و نتایج درخشان در کنکور سراسری، ما همچنان به نوآوری و بهبود خدمات خود ادامه می‌دهیم.
+                امروز، پرسینو به یکی از پیشروترین پلتفرم‌های آموزشی در ایران
+                تبدیل شده است. با بیش از ۵۰۰ دانش‌آموز فعال و نتایج درخشان در
+                کنکور سراسری، ما همچنان به نوآوری و بهبود خدمات خود ادامه
+                می‌دهیم.
               </p>
             </motion.div>
             <motion.div
@@ -118,7 +150,7 @@ export default function About() {
               className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl"
             >
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978"
+                src="/assets/Log2.png"
                 alt="تیم پرسینو در حال کار"
                 fill
                 className="object-cover"
@@ -138,7 +170,7 @@ export default function About() {
           >
             چرا پرسینو؟
           </motion.h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -150,75 +182,55 @@ export default function About() {
                 <div className="w-12 h-12 bg-[#46988F]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-[#46988F]">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl text-center font-semibold mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-center text-gray-600">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Comparison Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+{/* Benefits Section */}
+<section className="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl font-bold text-center mb-12"
+              className=" text-center text-3xl font-bold mb-4"
             >
-              مزایای پرسینو
+              مزایای استفاده از پرسینو
             </motion.h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                {advantages.map((advantage, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-center space-x-3 space-x-reverse"
-                  >
-                    <div className="w-6 h-6 rounded-full bg-[#46988F]/10 flex items-center justify-center flex-shrink-0">
-                      <Check className="h-4 w-4 text-[#46988F]" />
-                    </div>
-                    <span className="text-gray-700">{advantage}</span>
-                  </motion.div>
-                ))}
-              </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="relative h-[300px] rounded-xl overflow-hidden"
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998"
-                  alt="مزایای پرسینو"
-                  fill
-                  className="object-cover"
-                />
+                <div  className="text-2xl mb-10">{benefit.icon}</div>
+                <p className=" text-xl text-gray-600 text-center">{benefit.text}</p>
               </motion.div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
+      
+
+      
 
       {/* Call to Action */}
-      <section className="py-16 bg-[#46988F]">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-center text-white"
-          >
-            <h2 className="text-3xl font-bold mb-4">آماده‌اید که شروع کنید؟</h2>
-            <p className="text-white/90 mb-8 text-lg">
-              همین حالا به جمع هزاران دانش‌آموز موفق پرسینو بپیوندید
-            </p>
-            <button className="bg-white text-[#46988F] px-8 py-3 rounded-lg font-semibold hover:bg-white/90 transition-colors duration-300">
-              ثبت‌نام در پرسینو
-            </button>
-          </motion.div>
+      <section>
+        <div className="container mx-auto px-6">
+          <CtaSection />
         </div>
       </section>
     </div>

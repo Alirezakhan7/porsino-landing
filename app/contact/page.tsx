@@ -45,7 +45,7 @@ export default function Contact() {
         >
           <div className="relative h-[300px] rounded-2xl overflow-hidden mb-8">
             <Image
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
+              src="/assets/Log2.png"
               alt="تیم پشتیبانی"
               fill
               className="object-cover"
@@ -53,7 +53,7 @@ export default function Contact() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-              <h1 className="text-4xl font-bold mb-4">تماس با ما</h1>
+              <h1 className="text-4xl text-center font-bold mb-4">تماس با ما</h1>
               <p className="max-w-2xl mx-auto">
                 سوالات خود را ابتدا در بخش سوالات متداول جستجو کنید. در صورت نیاز، فرم زیر را پر کنید تا با پشتیبانی در تماس باشید.
               </p>

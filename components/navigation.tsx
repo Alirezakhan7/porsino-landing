@@ -1,21 +1,23 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
-import { AnimatedButton } from '@/components/ui/animated-button';
-import { Brain, Menu } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { AnimatedButton } from "@/components/ui/animated-button";
+import { Brain, Menu } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import Image from "next/image";
+import Head from "next/head";
 
 const routes = [
-  { name: 'خانه', path: '/' },
-  { name: 'وبلاگ', path: '/blog' },
-  { name: 'سوالات متداول', path: '/faq' },
-  { name: 'تعرفه‌ها', path: '/pricing' },
-  { name: 'ارتباط با ما', path: '/contact' },
-  { name: 'درباره ما', path: '/about' },
+  { name: "خانه", path: "/" },
+  { name: "وبلاگ", path: "/blog" },
+  { name: "سوالات متداول", path: "/faq" },
+  { name: "تعرفه‌ها", path: "/pricing" },
+  { name: "ارتباط با ما", path: "/contact" },
+  { name: "درباره ما", path: "/about" },
 ];
 
 export function Navigation() {
@@ -23,7 +25,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 right-0 px-4 pt-4 z-50">
+    <div className="fixed inset-x-0 top-0 z-50 w-full px-2 sm:px-4 pt-2 sm:pt-4">
       <nav
         className="w-full bg-white/95 backdrop-blur-sm rounded-xl shadow-lg border border-[#46988F]/10"
         dir="rtl"
@@ -34,8 +36,17 @@ export function Navigation() {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Link href="/" className="flex items-center space-x-2 space-x-reverse group">
-                <Brain className="h-8 w-8 text-[#46988F] transition-colors duration-200 group-hover:text-[#5AB5AC]" />
+              <Link
+                href="/"
+                className="flex items-center space-x-2 space-x-reverse group"
+              >
+                <Image
+                  src="/assets/logo.png"
+                  alt="Persino Logo"
+                  width={40}
+                  height={40}
+                  className="transition-colors duration-200 group-hover:brightness-110"
+                />
                 <span className="text-xl font-bold text-[#9B9B9B]">پرسینو</span>
               </Link>
             </motion.div>
@@ -47,17 +58,17 @@ export function Navigation() {
                   key={route.path}
                   href={route.path}
                   className={cn(
-                    'relative py-2 text-sm font-medium transition-colors duration-200 group',
+                    "relative py-2 text-sm font-medium transition-colors duration-200 group",
                     pathname === route.path
-                      ? 'text-[#9B9B9B]'
-                      : 'text-[#9B9B9B] hover:text-[#46988F]'
+                      ? "text-[#9B9B9B]"
+                      : "text-[#9B9B9B] hover:text-[#46988F]"
                   )}
                 >
                   {route.name}
                   <span
                     className={cn(
-                      'absolute bottom-0 left-0 h-0.5 w-0 bg-[#46988F] transition-all duration-300',
-                      pathname === route.path ? 'w-full' : 'group-hover:w-full'
+                      "absolute bottom-0 left-0 h-0.5 w-0 bg-[#46988F] transition-all duration-300",
+                      pathname === route.path ? "w-full" : "group-hover:w-full"
                     )}
                   />
                 </Link>
@@ -66,18 +77,31 @@ export function Navigation() {
 
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center space-x-4 space-x-reverse">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  variant="outline"
-                  className="border-black text-black hover:bg-black/10"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href="https://chat.porsino.org/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block border border-gray-200 text-sm text-black text-center px-4 py-2 rounded-lg hover:bg-black/10 transition"
                 >
                   ورود
-                </Button>
+                </a>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <AnimatedButton className="bg-[#46988F] hover:bg-[#5AB5AC] text-white">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href="https://chat.porsino.org/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-[#46988F] hover:bg-[#5AB5AC] text-white text-sm text-center py-2 px-4 rounded-lg transition"
+                >
                   ثبت نام
-                </AnimatedButton>
+                </a>
               </motion.div>
             </div>
 
@@ -109,10 +133,10 @@ export function Navigation() {
                   key={route.path}
                   href={route.path}
                   className={cn(
-                    'block py-2 text-sm font-medium transition-colors duration-200',
+                    "block py-2 text-sm font-medium transition-colors duration-200",
                     pathname === route.path
-                      ? 'text-[#9B9B9B]'
-                      : 'text-[#9B9B9B] hover:text-[#46988F]'
+                      ? "text-[#9B9B9B]"
+                      : "text-[#9B9B9B] hover:text-[#46988F]"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -120,15 +144,27 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="pt-4 space-y-3 border-t border-[#46988F]/10">
-                <Button
-                  variant="outline"
-                  className="w-full border-black text-black hover:bg-black/10"
+                <a
+                  href="https://chat.porsino.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  ورود
-                </Button>
-                <AnimatedButton className="w-full bg-[#46988F] hover:bg-[#5AB5AC] text-white">
-                  ثبت نام
-                </AnimatedButton>
+                  <Button
+                    variant="outline"
+                    className="w-full border-black text-black hover:bg-black/10"
+                  >
+                    ورود
+                  </Button>
+                </a>
+                <a
+                  href="https://chat.porsino.org/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AnimatedButton className="w-full bg-[#46988F] hover:bg-[#5AB5AC] text-white">
+                    ثبت نام
+                  </AnimatedButton>
+                </a>
               </div>
             </div>
           </motion.div>

@@ -9,7 +9,7 @@ import { ChatWidget } from '@/components/chat/ChatWidget';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Modern Landing Page',
+  title: ' پرسینو | دستیار هوش مصنوعی کنکوری ',
   description: 'A beautiful and responsive landing page built with Next.js and Tailwind CSS',
 };
 

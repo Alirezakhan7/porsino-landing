@@ -1,0 +1,10 @@
+/* styles.css */
+.link-style {
+    color: blue;
+    text-decoration: none; /* No underline by default */
+  }
+  
+  .link-style:hover {
+    text-decoration: underline; /* Underline when hovered */
+  }
+  

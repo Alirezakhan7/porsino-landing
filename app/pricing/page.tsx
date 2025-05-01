@@ -43,7 +43,7 @@ export default function Pricing() {
       {/* Hero Section */}
       <section className="relative h-[400px] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173"
+          src="/assets/Log2.png"
           alt="تعرفه‌های پرسینو"
           fill
           className="object-cover"
@@ -62,7 +62,7 @@ export default function Pricing() {
                 تعرفه‌های پرسینو
               </h1>
               <p className="text-xl text-white/90">
-                با صرفه‌ترین راه برای رسیدن به موفقیت تحصیلی
+                به‌صرفه‌ترین راه برای رسیدن به موفقیت تحصیلی
               </p>
             </motion.div>
           </div>
@@ -70,7 +70,7 @@ export default function Pricing() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-40 -mt-20 relative z-10">
+      <section className=" mb-20 mt-20 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {plans.map((plan, index) => (
@@ -139,14 +139,14 @@ export default function Pricing() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-[#46988F] rounded-2xl p-12 text-center text-white max-w-4xl mx-auto"
+            className="bg-[#46988F] rounded-2xl p-12 mb-10 text-center text-white max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl font-bold mb-4">هنوز مطمئن نیستید؟</h2>
-            <p className="text-white/90 mb-8 text-lg">
+            <h2 className="text-center text-3xl font-bold mb-4">هنوز مطمئن نیستید؟</h2>
+            <p className=" text-center text-white/90 mb-8 text-lg">
               با مشاوران ما صحبت کنید تا بهترین پلن را برای شما پیشنهاد دهند
             </p>
             <Button className="bg-white text-[#46988F] hover:bg-white/90 px-8 py-6 text-lg">
-              مشاوره رایگان
+              مشاوره 
             </Button>
           </motion.div>
         </div>
