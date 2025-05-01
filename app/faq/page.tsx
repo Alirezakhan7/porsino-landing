@@ -210,8 +210,8 @@ export default function FAQ() {
           className="bg-gradient-to-r from-[#46988F] to-[#5AB5AC] rounded-2xl p-8 text-white text-center cursor-pointer hover:shadow-lg transition-shadow"
         >
           <Link href="/contact">
-            <h2 className="text-2xl font-bold mb-2">❝ جواب سوالت را پیدا نکردی؟ ❞</h2>
-            <p className="text-white/90">❝ فرم تماس با ما را تکمیل کنید تا پشتیبانی جواب بدهد. ❞</p>
+            <h2 className="text-2xl font-bold mb-2 text-centered">❝ جواب سوالت را پیدا نکردی؟ ❞</h2>
+            <p className="text-white/90 text-centered">❝ فرم تماس با ما را تکمیل کنید تا پشتیبانی جواب بدهد. ❞</p>
           </Link>
         </motion.div>
       </div>
