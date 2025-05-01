@@ -424,7 +424,7 @@ export default function HomeContent() {
             </div>
 
             {/* Key Achievements */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-gray-800">
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={index}
