@@ -194,7 +194,7 @@ export default function FAQ() {
                   <AccordionTrigger className="text-right font-bold px-6 py-4 hover:bg-gray-50 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-right px-6 py-4 bg-gray-50">
+                  <AccordionContent className="text-right px-6 py-4 bg-gray-50 text-gray-800">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
