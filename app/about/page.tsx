@@ -159,41 +159,7 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Features Grid */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl font-bold text-center mb-12"
-          >
-            چرا پرسینو؟
-          </motion.h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="w-12 h-12 bg-[#46988F]/10 rounded-full flex items-center justify-center mx-auto mb-4 text-[#46988F]">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl text-center font-semibold mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-center text-gray-600">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
 {/* Benefits Section */}
 <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-6">
