@@ -97,10 +97,10 @@ export default function Pricing() {
                   `}>
                     {plan.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <h3 className="text-2xl font-bold mb-2 text-gray-800">{plan.name}</h3>
                   <p className="text-gray-600 mb-4">{plan.description}</p>
                   <div className="flex items-center justify-center gap-1">
-                    <span className="text-4xl font-bold">{plan.price}</span>
+                    <span className="text-4xl font-bold text-gray-800">{plan.price}</span>
                     <span className="text-gray-500">تومان / ماه</span>
                   </div>
                 </div>
