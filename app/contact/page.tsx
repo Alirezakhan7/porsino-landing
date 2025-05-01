@@ -69,8 +69,8 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h2 className="text-2xl font-bold mb-6">راه‌های ارتباطی</h2>
-              <div className="space-y-4">
+              <h2 className="text-2xl font-bold mb-6 text-gray-800">راه‌های ارتباطی</h2>
+              <div className="space-y-4 text-gray-600">
                 <div className="flex items-center space-x-4 space-x-reverse">
                   <Mail className="h-5 w-5 text-[#46988F]" />
                   <span>support@porsinoai.ir</span>
@@ -93,7 +93,7 @@ export default function Contact() {
             transition={{ delay: 0.3 }}
           >
             <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h2 className="text-2xl font-bold mb-6">فرم تماس</h2>
+              <h2 className="text-2xl font-bold mb-6 text-gray-600">فرم تماس</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">نام</label>
