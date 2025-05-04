@@ -29,7 +29,6 @@ export default function RootLayout({
         >
           <Navigation />
           <main className="min-h-screen bg-background">{children}</main>
-          <ChatWidget />
           <Footer />
         </ThemeProvider>
       </body>

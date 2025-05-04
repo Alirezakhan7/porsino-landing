@@ -168,7 +168,7 @@ const subjects = [
   {
     name: "استاد ریاضی",
     image:
-      "https://www.learnworlds.com/app/themes/learnworlds/dist/images/industries/finance/hero.png",
+      "/assets/riazi.jpg",
     features: [
       "مسلط به :",
       "تحلیل سریع مسائل",
@@ -180,7 +180,7 @@ const subjects = [
   {
     name: "استاد زیست",
     image:
-      "https://www.learnworlds.com/app/themes/learnworlds/dist/images/industries/health/hero.jpg",
+      "/assets/zist.jpg",
     features: [
       "مسلط به :",
       "تمام نکات درسی و کنکوری",
@@ -192,7 +192,7 @@ const subjects = [
   {
     name: "استاد شیمی",
     image:
-      "https://www.learnworlds.com/app/themes/learnworlds/dist/images/industries/enterprise-lms/hero-image.jpg",
+      "/assets/shimi.jpg",
     features: [
       "مسلط به :",
       "تفسیر واکنش‌های شیمیایی",
@@ -204,7 +204,7 @@ const subjects = [
   {
     name: "استاد فیزیک",
     image:
-      "https://www.learnworlds.com/app/themes/learnworlds/dist/images/industries/coaching/coaching-hero-img.jpg",
+      "/assets/physics.jpg",
     features: [
       "مسلط به :",
       "تحلیل قوانین فیزیک",
@@ -290,7 +290,7 @@ export default function HomeContent() {
                 اولین دستیار هوش مصنوعی کنکوری
                 <span className="block font-normal mt-4">
                   پرسینو یک دستیار تمام عیاره که توی تمام درس ها کمکت میکنه ،
-                  سوالات رو جواب میده وبرات نمونه سوال طراحی میکنه و و هزار تا
+                  سوالات رو جواب میده و برات نمونه سوال طراحی میکنه  و هزار تا
                   کار دیگه که حتما باید امتحانشون کنی!
                 </span>
               </p>
@@ -324,14 +324,15 @@ export default function HomeContent() {
                   transition={{ delay: 0.3 }}
                   className="relative w-full h-full"
                 >
-                  <Image
-                    src="https://avalai.ir/wp-content/uploads/2024/07/avalai-mobile-app-show-02.webp"
+                 <Image
+                    src="/assets/chatbot_porsino.png"
                     alt="پرسینو اپلیکیشن"
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                    width={1200}
+                    height={600}
+                    className="w-full h-auto"
                   />
+
+
                 </motion.div>
               </div>
             </motion.div>
@@ -383,9 +384,12 @@ export default function HomeContent() {
                   </div>
 
                   <div className="absolute bottom-6 left-6 right-6 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
-                    <Button className="w-full bg-[#46988F] hover:bg-[#5AB5AC] transition-all duration-300 py-6 text-lg">
-                      شروع
-                    </Button>
+                    <a href="https://chat.porsino.org" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-[#46988F] hover:bg-[#5AB5AC] transition-all duration-300 py-6 text-lg">
+                        شروع
+                      </Button>
+                    </a>
+
                   </div>
                 </div>
               </motion.div>
@@ -494,13 +498,15 @@ export default function HomeContent() {
                 whileInView={{ opacity: 1, x: 0 }}
                 className="relative px-4 lg:px-0 order-2"
               >
-                <div className="relative w-full lg:w-[650px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl mx-auto">
-                  <Image
-                    src="/assets/novin.png"
-                    alt="دانش‌آموزان پرسینو"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative w-full max-w-[400px] lg:max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl mx-auto">
+                    <Image
+                      src="/assets/novin.jpg"
+                      alt="دانش‌آموزان پرسینو"
+                      fill
+                      className="object-cover"
+                    />
+             
+
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
@@ -530,25 +536,30 @@ export default function HomeContent() {
                 className="space-y-6 order-1 lg:order-2 px-4 md:px-0"
               >
                 <h3 className="text-2xl font-bold text-gray-900">
-                  مقایسه هزینه های تحصیلی
+                  مقایسه هزینه‌های تحصیلی
                 </h3>
-                <p className="text-gray-700 leading-8 text-justify">
-                  استفاده از هوش مصنوعی در آموزش نه‌تنها کیفیت یادگیری را افزایش
-                  می‌دهد، بلکه باعث کاهش قابل توجه هزینه‌های تحصیلی نیز شده است.
-                  مطالعات نشان می‌دهد استفاده از معلم‌های مجازی و سیستم‌های
-                  تدریس هوشمند، هزینه آموزش خصوصی را تا ۵۵٪ کاهش داده است.
-                  خانواده‌هایی که از پلتفرم‌های آموزشی مبتنی بر هوش مصنوعی
-                  استفاده کرده‌اند، به‌طور متوسط ۳۰٪ کمتر برای خرید کتاب‌های
-                  کمک‌درسی و منابع آموزشی هزینه کرده‌اند. هوش مصنوعی با ایجاد
-                  برنامه‌های شخصی‌سازی‌شده، نیاز به کلاس‌های تقویتی حضوری را تا
-                  ۴۰٪ کاهش داده است. ابزارهای رایگان یا کم‌هزینه مانند کوییزهای
-                  هوشمند و سیستم‌های بازخورد فوری نیز باعث صرفه‌جویی در هزینه
-                  آزمون‌ها و مشاوره‌های تحصیلی شده‌اند. همچنین استفاده از
-                  سیستم‌های تحلیل پیشرفت، خانواده‌ها را از صرف هزینه‌های اضافی
-                  برای انتخاب مسیرهای نامناسب آموزشی بازداشته است. این داده‌ها
-                  نشان می‌دهد که با بهره‌گیری از هوش مصنوعی می‌توان ضمن ارتقاء
-                  سطح آموزشی، به‌طور هوشمندانه در هزینه‌های آموزشی صرفه‌جویی
-                  کرد.
+                <p className="text-gray-700 leading-6 text-justify">
+                  در دنیای امروز، آموزش باکیفیت نباید فقط مخصوص کسانی باشه که پول زیادی خرج می‌کنن.
+                  پرسینو اومده تا این ذهنیت قدیمی رو تغییر بده و دسترسی به آموزش حرفه‌ای رو برای همه ممکن کنه.
+                </p>
+                <ul className="list-disc pr-6 text-gray-700 leading-relaxed">
+                  <li>با یه هزینه ماهانه منطقی، به کل محتوای آموزشی دسترسی داری.</li>
+                  <li>نیازی به پرداخت چندمیلیونی برای کلاس خصوصی نیست.</li>
+                  <li>
+                    همه چیز رو یک‌جا داری:
+                    <ul className="list-disc pr-6 mt-1 space-y-1">
+                      <li>آموزش تمام دروس</li>
+                      <li>تحلیل عملکرد</li>
+                      <li>آموزش پلاس</li>
+                      <li>پشتیبانی شبانه‌روزی</li>
+                    </ul>
+                  </li>
+                  <li>هزینه‌ای که می‌دی فقط برای یک معلم یا یک درس نیست؛ برای یک سیستم کامل و هوشمنده.</li>
+                  <li>بدون نیاز به رفت‌و‌آمد، منابع پراکنده یا جلسات جبرانی.</li>
+                </ul>
+
+                <p className="text-gray-800 font-medium mt-4">
+                  نتیجه؟ با پرسینو، کمتر خرج می‌کنی، ولی بیشتر یاد می‌گیری. این یعنی آموزش باکیفیت، بدون فشار اقتصادی روی خانواده.
                 </p>
               </motion.div>
 
@@ -560,7 +571,7 @@ export default function HomeContent() {
               >
                 <div className="relative w-full md:w-[650px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl mx-auto">
                   <Image
-                    src="/assets/eco.png"
+                    src="/assets/eco.jpg"
                     alt="دانش‌آموزان پرسینو"
                     fill
                     className="object-cover"
@@ -584,58 +595,84 @@ export default function HomeContent() {
                 </div>
               </motion.div>
             </div>
+       {/* User Growth با بک‌گراند Bubble و متن‌های Justify */}
+       /* ===================  سکشن «رشد کاربران»  =================== */
+       /* ===================  سکشن «چرا پرسینو؟!»  =================== */
+        <section className="relative py-12 overflow-visible">
+          {/* حباب‌های پس‌زمینه با رنگ کم‌رنگ‌تر */}
+          <span className="absolute -top-28 -right-24 w-72 h-72 bg-[#D5F4EF] rounded-full blur-3xl opacity-40 z-0" />
+          <span className="absolute top-[30%] -left-24 w-60 h-60 bg-[#BFF0E7] rounded-full blur-3xl opacity-30 z-0" />
+          <span className="absolute bottom-0 right-1/3 w-64 h-64 bg-[#EAFBF8] rounded-full blur-3xl opacity-50 z-0" />
 
-            {/* User Growth */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-40">
-              {/* Left side (empty or image placeholder) */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="md:col-span-1 text-center"
-              >
-                {/* Add image or leave empty */}
-              </motion.div>
+          {/* محتوای اصلی */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="relative z-10 max-w-4xl mx-auto grid justify-items-center grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 px-6"
+          >
+            {/* تیتر وسط دو ستون */}
+            <h3 className="col-span-1 md:col-span-2 text-3xl font-bold text-gray-900 text-center mb-6">
+              چرا&nbsp;پرسینو؟!
+            </h3>
 
-              {/* Middle side (text content) */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                className="md:col-span-1 space-y-6 order-1"
-              >
-                <div className="md:col-span-1 space-y-6 ">
-                  <h3 className="text-2xl font-bold text-center">
-                    رشد روزافزون کاربران
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed text-center">
-                    اعتماد روزافزون دانش‌آموزان و خانواده‌ها به پرسینو
-                    نشان‌دهنده کیفیت و اثربخشی روش‌های نوین آموزشی ماست. ما با
-                    افتخار میزبان بیش از ۱۰,۰۰۰ دانش‌آموز فعال هستیم.
-                  </p>
+            {/* ستون راست */}
+            {/* ستون راست */}
+            <ul className="w-full flex flex-col gap-8 text-gray-600 text-justify">
+              {[
+                'پاسخ‌گویی فوری در هر ساعت از شبانه‌روز',
+                'بدون محدودیت زمانی یا نیاز به برنامه‌ریزی',
+                'مناسب برای دانش‌آموزانی با سبک مطالعه منعطف یا نامنظم',
+              ].map((text) => (
+                <li key={text} className="w-full flex items-start gap-4">
+                  <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-[#46988F]" />
+                  </div>
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* ستون چپ */}
+            <ul className="w-full md:w-[360px] flex flex-col gap-8 text-gray-600 text-justify">
+              {[
+                'پاسخ‌گویی فوری در هر ساعت از شبانه‌روز',
+                'بدون محدودیت زمانی یا نیاز به برنامه‌ریزی',
+                'مناسب برای دانش‌آموزانی با سبک مطالعه منعطف یا نامنظم',
+              ].map((text) => (
+                <li key={text} className="w-full flex items-start gap-4">
+                  <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">
+                    <Check className="h-4 w-4 text-[#46988F]" />
+                  </div>
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+
+
+          </motion.div>
+        </section>
+
+
+
+
+            <div className="w-full bg-gray-50 py-6 px-6 md:px-16 mt-10">
+                  <div className="max-w-5xl mx-auto">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center">
+                      آموزش پلاس: فراتر از حفظ کردن، وارد دنیای فهمیدن شو
+                    </h3>
+                    <p className="text-gray-700 leading-8 text-justify">
+                      در بسیاری از سیستم‌های آموزشی، تنها هدف این است که دانش‌آموز پاسخ سوال را حفظ کند.
+                      اما در پرسینو، ما یک قدم جلوتر می‌رویم. در حالت <strong>آموزش پلاس</strong>، وقتی دانش‌آموز سوالی می‌پرسد، بلافاصله پاسخ نهایی را دریافت نمی‌کند.
+                      در عوض، پرسینو ابتدا نکاتی کلیدی و راهنمایی‌هایی ارائه می‌دهد، سپس با پرسیدن سوال‌هایی هدفمند، کمک می‌کند تا دانش‌آموز خودش به پاسخ برسد.
+                      <br /><br />
+                      این مدل تعاملی، باعث می‌شود فرآیند یادگیری عمیق‌تر و ماندگارتر باشد. دانش‌آموز فقط یک جواب را حفظ نمی‌کند، بلکه مسیر رسیدن به آن را یاد می‌گیرد.
+                      همین فرایند موجب می‌شود <strong>مهارت تحلیل، تفکر منطقی و حل مسئله</strong> در او تقویت شود؛ مهارت‌هایی که نه‌فقط در امتحان بلکه در زندگی هم کاربرد دارند.
+                      <br /><br />
+                      <strong>آموزش پلاس</strong> یعنی یادگیری فعال و هوشمندانه. یعنی یاد گرفتن به روش فکر کردن، نه حفظ کردن.
+                      با این رویکرد، دانش‌آموز از یک گیرنده‌ی اطلاعات صرف، به یک یادگیرنده‌ی کنجکاو و مستقل تبدیل می‌شود.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex items-center justify-center h-full text-gray-800">
-                  <ul className="space-y-4">
-                    <li className="flex items-center space-x-3 space-x-reverse">
-                      <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-[#46988F]" />
-                      </div>
-                      <span>پشتیبانی ۲۴/۷ برای تمام کاربران</span>
-                    </li>
-                    <li className="flex items-center space-x-3 space-x-reverse">
-                      <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-[#46988F]" />
-                      </div>
-                      <span>به‌روزرسانی مداوم محتوای آموزشی</span>
-                    </li>
-                    <li className="flex items-center space-x-3 space-x-reverse">
-                      <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">
-                        <Check className="h-4 w-4 text-[#46988F]" />
-                      </div>
-                      <span>گزارش‌های تحلیلی پیشرفت</span>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
@@ -806,7 +843,7 @@ export default function HomeContent() {
             <div className="relative rounded-2xl overflow-hidden shadow-lg min-h-[500px]">
               {/* Background Image */}
               <Image
-                src="/assets/Benefits.png"
+                src="/assets/Benefits.jpg"
                 alt="مزایای پرسینو"
                 fill
                 className="object-cover object-[top_center]"

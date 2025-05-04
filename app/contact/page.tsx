@@ -19,7 +19,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
       toast.error('لطفاً تمام فیلدها را پر کنید');
       return;
@@ -36,31 +36,36 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50" dir="rtl">
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <div className="relative h-[300px] rounded-2xl overflow-hidden mb-8">
-            <Image
-              src="/assets/Log2.png"
-              alt="تیم پشتیبانی"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-              <h1 className="text-4xl text-center font-bold mb-4">تماس با ما</h1>
-              <p className="max-w-2xl mx-auto">
+      {/* Hero Section (تمام‌عرض) */}
+      <section className="relative h-[400px] overflow-hidden">
+        <Image
+          src="/assets/Log2.png"
+          alt="تیم پشتیبانی"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl mx-auto text-center"
+            >
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                تماس با ما
+              </h1>
+              <p className="text-xl text-white/90">
                 سوالات خود را ابتدا در بخش سوالات متداول جستجو کنید. در صورت نیاز، فرم زیر را پر کنید تا با پشتیبانی در تماس باشید.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
+      </section>
 
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -99,18 +104,22 @@ export default function Contact() {
                   <label className="block text-sm font-medium mb-2">نام</label>
                   <Input
                     value={formData.name}
-                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, name: e.target.value }))
+                    }
                     className="text-right"
                     placeholder="نام خود را وارد کنید"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2">ایمیل</label>
                   <Input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, email: e.target.value }))
+                    }
                     className="text-right"
                     placeholder="ایمیل خود را وارد کنید"
                   />
@@ -120,17 +129,21 @@ export default function Contact() {
                   <label className="block text-sm font-medium mb-2">موضوع</label>
                   <Input
                     value={formData.subject}
-                    onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, subject: e.target.value }))
+                    }
                     className="text-right"
                     placeholder="موضوع پیام خود را وارد کنید"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2">پیام</label>
                   <Textarea
                     value={formData.message}
-                    onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                    onChange={(e) =>
+                      setFormData((prev) => ({ ...prev, message: e.target.value }))
+                    }
                     className="text-right min-h-[150px]"
                     placeholder="پیام خود را اینجا بنویسید"
                   />
