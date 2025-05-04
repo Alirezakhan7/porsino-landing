@@ -1,5 +1,11 @@
 "use client";
+import React, { useRef } from 'react';
 
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ReviewsSection from '@/components/ReviewsSection';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -219,23 +225,43 @@ const reviews = [
   {
     name: "سارا محمدی",
     role: "دانش‌آموز پایه دوازدهم",
-    text: "پرسینو به من کمک کرد تا برنامه مطالعاتی منظمی داشته باشم و در کنکور به هدفم برسم.",
+    text: "پرسینو کمکم کرد برنامه‌ی منظم داشته باشم و در کنکور به هدفم برسم."
   },
   {
     name: "علی رضایی",
     role: "دانش‌آموز پایه یازدهم",
-    text: "هوش مصنوعی پرسینو در شناسایی نقاط ضعف و قوت من فوق‌العاده عمل کرد.",
+    text: "هوش مصنوعی پرسینو نقاط ضعف و قوتم را عالی تحلیل کرد."
   },
   {
     name: "مریم احمدی",
     role: "دانش‌آموز پایه دوازدهم",
-    text: "بهترین همراه من در مسیر آمادگی برای کنکور. واقعاً عالی و کاربردیه!",
+    text: "بهترین همراه من در مسیر آمادگی برای کنکور؛ واقعاً کاربردی!"
   },
   {
     name: "محمد حسینی",
     role: "دانش‌آموز پایه دهم",
-    text: "با پرسینو تونستم نقاط ضعفم رو شناسایی کنم و روشون کار کنم. نتیجه‌اش عالی بود!",
+    text: "با پرسینو نقاط ضعفم را پیدا کردم و نتیجه‌اش فوق‌العاده بود."
   },
+  {
+    name: "نگین خادمی",
+    role: "دانش‌آموز پایه یازدهم",
+    text: "پرسینو استرسم را کم کرد چون هر لحظه می‌توانستم پاسخ سوالم را بگیرم."
+  },
+  {
+    name: "پارسا نوروزی",
+    role: "دانش‌آموز پایه دوازدهم",
+    text: "برنامه‌ی شخصی‌سازی شده‌ی پرسینو دقیقاً متناسب با تایم‌ام بود."
+  },
+  {
+    name: "الهام کریمی",
+    role: "دانش‌آموز پایه دهم",
+    text: "مبحث‌های سخت فیزیک را با راهنمای گام‌به‌گام AI خیلی سریع یاد گرفتم."
+  },
+  {
+    name: "رضا احمدیان",
+    role: "دانش‌آموز پایه دوازدهم",
+    text: "نمونه‌سوال‌های تولیدشده توسط پرسینو دقیقاً شبیه امتحان مدرسه بود!"
+  }
 ];
 
 const benefits = [
@@ -512,17 +538,18 @@ export default function HomeContent() {
                     initial={{ y: 20, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    className="absolute bottom-0 left-0 right-0 p-4 sm:p-6"
+                    className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 md:p-6"
                   >
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-6">
-                      <div className="text-2xl font-bold text-gray-900 mb-2">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-3 sm:p-5 md:p-6">
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2">
                         یادگیری نوین
                       </div>
-                      <p className="text-gray-600">
+                      <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed">
                         با استفاده از جدیدترین تکنولوژی‌های هوش مصنوعی
                       </p>
                     </div>
                   </motion.div>
+
                 </div>
               </motion.div>
             </div>
@@ -583,21 +610,12 @@ export default function HomeContent() {
                     transition={{ delay: 0.4 }}
                     className="absolute bottom-0 left-0 right-0 p-4 sm:p-6"
                   >
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 sm:p-6">
-                      <div className="text-2xl font-bold text-gray-900 mb-2">
-                        تحصیل اقتصادی
-                      </div>
-                      <p className="text-gray-600">
-                        با استفاده از جدیدترین تکنولوژی‌های هوش مصنوعی
-                      </p>
-                    </div>
+              
                   </motion.div>
                 </div>
               </motion.div>
             </div>
        {/* User Growth با بک‌گراند Bubble و متن‌های Justify */}
-       /* ===================  سکشن «رشد کاربران»  =================== */
-       /* ===================  سکشن «چرا پرسینو؟!»  =================== */
         <section className="relative py-12 overflow-visible">
           {/* حباب‌های پس‌زمینه با رنگ کم‌رنگ‌تر */}
           <span className="absolute -top-28 -right-24 w-72 h-72 bg-[#D5F4EF] rounded-full blur-3xl opacity-40 z-0" />
@@ -676,132 +694,80 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
-
-      {/* Support Section with Ripple Effect */}
-      <section className="bg-[#46988F] relative py-20">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              className="relative min-h-[400px] flex items-center"
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
-                <RippleEffect
-                  color="rgba(255, 255, 255, 0.1)"
-                  size={300}
-                  duration={1}
-                />
-              </div>
-              <div className="relative z-10 space-y-8">
-                <h2 className="text-4xl font-bold text-white">
-                  پشتیبانی ۳۶۰ درجه
-                </h2>
-                <p className="text-xl text-white/90 leading-relaxed">
-                  ما اینجا هستیم تا در هر لحظه از مسیر یادگیری، شما را همراهی
-                  کنیم!
-                </p>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <a href="/faq" target="_blank" rel="noopener noreferrer">
-                    <Button
-                      size="lg"
-                      className="bg-white text-[#46988F] font-bold hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
-                    >
-                      مشاهده سوالات متداول
-                      <ArrowRight className="mr-2 h-5 w-5" />
-                    </Button>
-                  </a>
-                </motion.div>
-              </div>
-            </motion.div>
-
-            <div className="grid grid-cols-2 gap-6 items-center justify-center">
-              {[
-                {
-                  icon: Users,
-                  title: "پشتیبانی جامع",
-                  desc: "برای تمامی کاربران",
-                },
-                { icon: Target, title: "پاسخ سریع", desc: "به تمام سوالات" },
-                {
-                  icon: BookOpen,
-                  title: "راهنمای کامل",
-                  desc: "استفاده از پلتفرم",
-                },
-                {
-                  icon: Sparkles,
-                  title: "پشتیبانی ویژه",
-                  desc: "خدمات شخصی‌سازی شده",
-                },
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm text-center rounded-2xl p-6 text-center hover:bg-white/20 transition-all duration-300 relative"
-                >
-                  <div className="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
-                    <item.icon className="h-6 w-6 text-white text-center" />
-                  </div>
-                  <h3 className=" text-center text-lg font-semibold mb-2 text-white relative z-10">
-                    {item.title}
-                  </h3>
-                  <p className="text-center text-white/80 relative z-10">
-                    {item.desc}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews Section */}
-      <section className="reviews-section py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="text-3xl font-bold mb-4 text-center"
-            >
-              نظرات دانش‌آموزان
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className=" text-center text-gray-600"
-            >
-              تجربه دانش‌آموزان موفق پرسینو
-            </motion.p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {reviews.map((review, index) => (
+        {/* Support Section with Ripple Effect */}
+        <section className="bg-[#46988F] relative py-20">
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="relative min-h-[400px] flex items-center"
               >
-                <div className="text-[#46988F] text-4xl mb-4">❝</div>
-                <p className=" text-center text-gray-600 mb-4">{review.text}</p>
-                <div className="border-t pt-4">
-                  <h4 className="font-semibold">{review.name}</h4>
-                  <p className="text-sm text-gray-500">{review.role}</p>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
+                  <RippleEffect
+                    color="rgba(255, 255, 255, 0.1)"
+                    size={300}
+                    duration={1}
+                  />
+                </div>
+                <div className="relative z-10 space-y-8">
+                  <h2 className="text-4xl font-bold text-white">
+                    پشتیبانی ۳۶۰ درجه
+                  </h2>
+                  <p className="text-xl text-white/90 leading-relaxed">
+                    ما اینجا هستیم تا در هر لحظه از مسیر یادگیری، شما را همراهی کنیم!
+                  </p>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <a href="/faq" target="_blank" rel="noopener noreferrer">
+                      <Button
+                        size="lg"
+                        className="bg-white text-[#46988F] font-bold hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
+                      >
+                        مشاهده سوالات متداول
+                        <ArrowRight className="mr-2 h-5 w-5" />
+                      </Button>
+                    </a>
+                  </motion.div>
                 </div>
               </motion.div>
-            ))}
+
+              <div className="grid grid-cols-2 gap-6 items-stretch justify-center">
+                {[
+                  { icon: Users, title: "پشتیبانی جامع", desc: "برای تمامی کاربران" },
+                  { icon: Target, title: "پاسخ سریع", desc: "به تمام سوالات" },
+                  { icon: BookOpen, title: "راهنمای کامل", desc: "استفاده از پلتفرم" },
+                  { icon: Sparkles, title: "پشتیبانی ویژه", desc: "خدمات شخصی‌سازی شده" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="h-full flex flex-col justify-center bg-white/10 backdrop-blur-sm text-center rounded-2xl p-6 hover:bg-white/20 transition-all duration-300 relative"
+                  >
+                    <div className="h-12 w-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+                      <item.icon className="h-6 w-6 text-white text-center" />
+                    </div>
+                    <h3 className="text-center text-lg font-semibold mb-2 text-white relative z-10">
+                      {item.title}
+                    </h3>
+                    <p className="text-center text-white/80 relative z-10">
+                      {item.desc}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+        
+        <ReviewsSection />
+
+
 
       {/* Benefits Section */}
       <div className="block lg:hidden">

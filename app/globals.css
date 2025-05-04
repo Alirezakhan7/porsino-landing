@@ -250,3 +250,65 @@ p, li, h1, h2, h3, h4, h5, h6 {
 html, body {
   overflow-x: hidden;
 }
+
+
+
+/* Add these styles to your globals.css file */
+
+/* Completely remove default swiper navigation arrows */
+.swiper-custom-navigation .swiper-button-next,
+.swiper-custom-navigation .swiper-button-prev {
+  display: none;
+}
+
+/* Remove the ::after pseudo-element from buttons */
+.swiper-custom-navigation .swiper-button-next::after,
+.swiper-custom-navigation .swiper-button-prev::after {
+  content: none;
+}
+
+/* Style custom navigation buttons */
+.swiper-custom-button-prev,
+.swiper-custom-button-next {
+  width: 40px;
+  height: 40px;
+  color: #46988F;
+  border: 1px solid rgba(70, 152, 143, 0.2);
+}
+
+.swiper-custom-button-prev:hover,
+.swiper-custom-button-next:hover {
+  background-color: rgba(70, 152, 143, 0.1);
+}
+
+/* Disabled state for nav buttons */
+.swiper-custom-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Make sure Swiper container has enough padding to prevent cutoff */
+.swiper-custom-navigation {
+  padding: 10px 0;
+}
+
+/* Ensure all slides have full opacity (fix for middle slide opacity issue) */
+.swiper-slide {
+  opacity: 1 !important;
+}
+
+/* Override any potential Swiper opacity settings */
+.swiper-slide-active,
+.swiper-slide-next,
+.swiper-slide-prev {
+  opacity: 1 !important;
+}
+
+/* Responsive styles for navigation buttons on mobile */
+@media (max-width: 768px) {
+  .swiper-custom-button-prev,
+  .swiper-custom-button-next {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -11,6 +11,9 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: ' پرسینو | دستیار هوش مصنوعی کنکوری ',
   description: 'A beautiful and responsive landing page built with Next.js and Tailwind CSS',
+  icons: {
+    icon: '/assets/favicon.ico',
+  },
 };
 
 export default function RootLayout({
