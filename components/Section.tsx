@@ -56,7 +56,7 @@ const CtaSection = () => {
           >
             همین حالا به جمع هزاران دانش‌آموز موفق پرسینو بپیوندید
           </p>
-          <a href="https://chat.porsino.org/" target="_blank" rel="noopener noreferrer">
+          <a href="https://chat.porsino.org/login?mode=signup" target="_blank" rel="noopener noreferrer">
             <Button
               className={`px-8 py-6 text-lg transition-colors duration-500 ${
                 isVisible

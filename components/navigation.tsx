@@ -95,7 +95,8 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-                  href="https://chat.porsino.org/login"
+                  href="https://chat.porsino.org/login?mode=signup
+"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-[#46988F] hover:bg-[#5AB5AC] text-white text-sm text-center py-2 px-4 rounded-lg transition"
@@ -157,7 +158,7 @@ export function Navigation() {
                   </Button>
                 </a>
                 <a
-                  href="https://chat.porsino.org/login"
+                  href="https://chat.porsino.org/login?mode=signup"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
