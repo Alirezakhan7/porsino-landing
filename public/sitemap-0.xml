@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://porsino.ir</loc><lastmod>2025-05-28T09:10:37.745Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://porsino.ir/pricing</loc><lastmod>2025-05-28T09:10:37.746Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://porsino.ir/about</loc><lastmod>2025-05-28T09:10:37.746Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://porsino.ir/blog</loc><lastmod>2025-05-28T09:10:37.746Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://porsino.ir/faq</loc><lastmod>2025-05-28T09:10:37.746Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://porsino.ir/guide</loc><lastmod>2025-05-28T09:10:37.746Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://porsino.ir/contact</loc><lastmod>2025-05-28T09:10:37.746Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org/about</loc><lastmod>2025-05-28T09:16:38.405Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org</loc><lastmod>2025-05-28T09:16:38.406Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org/pricing</loc><lastmod>2025-05-28T09:16:38.406Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org/blog</loc><lastmod>2025-05-28T09:16:38.406Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org/contact</loc><lastmod>2025-05-28T09:16:38.406Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org/guide</loc><lastmod>2025-05-28T09:16:38.406Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://porsino.org/faq</loc><lastmod>2025-05-28T09:16:38.406Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
