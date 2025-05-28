@@ -581,7 +581,7 @@ export default function HomeContent() {
                       <li>پشتیبانی شبانه‌روزی</li>
                     </ul>
                   </li>
-                  <li>هزینه‌ای که می‌دی فقط برای یک معلم یا یک درس نیست؛ برای یک سیستم کامل و هوشمنده.</li>
+                  <li>هزینه‌ای که میدی فقط برای یک معلم یا یک درس نیست؛ برای یک سیستم کامل و هوشمنده.</li>
                   <li>بدون نیاز به رفت‌و‌آمد، منابع پراکنده یا جلسات جبرانی.</li>
                 </ul>
 
@@ -653,9 +653,9 @@ export default function HomeContent() {
             {/* ستون چپ */}
             <ul className="w-full md:w-[360px] flex flex-col gap-8 text-gray-600 text-justify">
               {[
-                'پاسخ‌گویی فوری در هر ساعت از شبانه‌روز',
-                'بدون محدودیت زمانی یا نیاز به برنامه‌ریزی',
-                'مناسب برای دانش‌آموزانی با سبک مطالعه منعطف یا نامنظم',
+                'پاسخ های پرسینو بر اساس متن کتاب درسی می باشند',
+                'دیتابیسی جامع از تست ها و کنکور های سال های قبل',
+                '!هر چقدر که دوست داری سوال بپرس ، پرسینو تا یادنگیری بیخیال نمیشه',
               ].map((text) => (
                 <li key={text} className="w-full flex items-start gap-4">
                   <div className="h-6 w-6 rounded-full bg-[#46988F]/10 flex items-center justify-center">
@@ -676,7 +676,7 @@ export default function HomeContent() {
             <div className="w-full bg-gray-50 py-6 px-6 md:px-16 mt-10">
                   <div className="max-w-5xl mx-auto">
                     <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-6 text-center">
-                      آموزش پلاس: فراتر از حفظ کردن، وارد دنیای فهمیدن شو
+                      آموزش پلاس: پرسینو اونقدر به روش های مختلف توضیح میده که کامل یادبگیری
                     </h3>
                     <p className="text-gray-700 leading-8 text-justify">
                       در بسیاری از سیستم‌های آموزشی، تنها هدف این است که دانش‌آموز پاسخ سوال را حفظ کند.

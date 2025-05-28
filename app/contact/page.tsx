@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import Image from 'next/image';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { FaTelegramPlane, FaInstagram } from "react-icons/fa"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -78,11 +79,11 @@ export default function Contact() {
               <div className="space-y-4 text-gray-600">
                 <div className="flex items-center space-x-4 space-x-reverse">
                   <Mail className="h-5 w-5 text-[#46988F]" />
-                  <span>support@porsinoai.ir</span>
+                  <span>support@porsino.org</span>
                 </div>
                 <div className="flex items-center space-x-4 space-x-reverse">
                   <Phone className="h-5 w-5 text-[#46988F]" />
-                  <span>0912-7842361</span>
+                  <span>0910-6968873</span>
                 </div>
                 <div className="flex items-center space-x-4 space-x-reverse">
                   <MapPin className="h-5 w-5 text-[#46988F]" />
@@ -91,73 +92,42 @@ export default function Contact() {
               </div>
             </div>
           </motion.div>
-
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-xl p-8 shadow-sm text-center"
           >
-            <div className="bg-white rounded-xl p-8 shadow-sm">
-              <h2 className="text-2xl font-bold mb-6 text-gray-600">فرم تماس</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">نام</label>
-                  <Input
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, name: e.target.value }))
-                    }
-                    className="text-right"
-                    placeholder="نام خود را وارد کنید"
-                  />
-                </div>
+            <h2 className="text-2xl font-bold mb-6 text-gray-600">راه‌های ارتباط با ما</h2>
+            <p className="text-gray-600 mb-8 text-sm">
+              در حال حاضر از طریق شبکه‌های اجتماعی پاسخ‌گو هستیم. برای ارتباط سریع با تیم پشتیبانی، روی یکی از گزینه‌های زیر کلیک کنید:
+            </p>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2">ایمیل</label>
-                  <Input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, email: e.target.value }))
-                    }
-                    className="text-right"
-                    placeholder="ایمیل خود را وارد کنید"
-                  />
-                </div>
+            <div className="flex flex-col gap-4 items-center">
+              <motion.a
+                href="https://t.me/porsinoai"
+                target="_blank"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center gap-2 w-full max-w-sm rounded-full bg-[#0088cc] hover:bg-[#007ab8] text-white py-3 text-lg transition"
+              >
+                <FaTelegramPlane className="text-xl" />
+                ارتباط از طریق تلگرام
+              </motion.a>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2">موضوع</label>
-                  <Input
-                    value={formData.subject}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, subject: e.target.value }))
-                    }
-                    className="text-right"
-                    placeholder="موضوع پیام خود را وارد کنید"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2">پیام</label>
-                  <Textarea
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, message: e.target.value }))
-                    }
-                    className="text-right min-h-[150px]"
-                    placeholder="پیام خود را اینجا بنویسید"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  className="w-full bg-[#46988F] hover:bg-[#5AB5AC] text-white py-6"
-                >
-                  ارسال پیام
-                </Button>
-              </form>
+              <motion.a
+                href="https://instagram.com/porsinoai"
+                target="_blank"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center justify-center gap-2 w-full max-w-sm rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:opacity-90 text-white py-3 text-lg transition"
+              >
+                <FaInstagram className="text-xl" />
+                پیام در اینستاگرام
+              </motion.a>
             </div>
           </motion.div>
+
         </div>
       </div>
     </div>
