@@ -11,15 +11,13 @@ const socialLinks = [
 ];
 
 const guideLinks = [
-  { name: 'محصولات', href: '/products' },
-  { name: 'راهنمای کاربران', href: '/guide' },
+  { name: 'تعرفه ها', href: '/pricing' },
   { name: 'سوالات متداول', href: '/faq' },
-  { name: 'حریم خصوصی', href: '/privacy' },
+  { name: 'حریم خصوصی', href: '/privacy-policy' },
 ];
 
 const termsLinks = [
   { name: 'قوانین و مقررات', href: '/terms' },
-  { name: 'وضعیت سرویس', href: '/status' },
   { name: 'تماس با ما', href: '/contact' },
 ];
 
