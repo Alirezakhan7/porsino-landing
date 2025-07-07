@@ -69,21 +69,41 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 - Terms & Conditions */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">قوانین و مقررات</h3>
-            <ul className="space-y-3">
-              {termsLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Column 3 - Terms & Enamad */}
+          <div className="flex flex-col gap-6 items-start">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">قوانین و مقررات</h3>
+              <ul className="space-y-3">
+                {termsLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className="text-white/80 hover:text-white transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Enamad Logo */}
+            <div className="mt-4">
+              <a
+                referrerPolicy="origin"
+                target="_blank"
+                href="https://trustseal.enamad.ir/?id=623859&Code=CsDAreTu1YYwZJ9NpStdzTCH2PsSgs7j"
+              >
+                <img
+                  referrerPolicy="origin"
+                  src="https://trustseal.enamad.ir/logo.aspx?id=623859&Code=CsDAreTu1YYwZJ9NpStdzTCH2PsSgs7j"
+                  alt="نماد اعتماد الکترونیکی"
+                  className="w-24 sm:w-28 md:w-32"
+                  style={{ cursor: 'pointer' }}
+                />
+              </a>
+            </div>
+
           </div>
         </div>
 
