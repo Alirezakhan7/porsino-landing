@@ -5,33 +5,38 @@ import { motion } from 'framer-motion';
 import { Check, Sparkles, Rocket } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+
+const featuresYearly = [
+  "تمام امکانات پلن ماهانه",
+  "سی درصد تخفیف نسبت به خرید ماهانه",
+  "مجموع ۱۲۰ میلیون توکن در سال (هر ماه ۱۰ میلیون)",
+  "انتقال توکن‌های استفاده‌ نشده هر ماه به ماه بعد",
+]
 const plans = [
   {
-    name: 'پلن پایه',
-    price: '589,000',
+    name: 'پلن ماهانه',
+    price: '840,000',
     description: 'مناسب برای شروع مسیر موفقیت',
     icon: <Sparkles className="h-6 w-6" />,
     features: [
-      'دسترسی به تمام دروس',
-      'دسترسی به تمام کنکورها',
-      'دسترسی به تمام امتحانات نهایی',
-      'هوش مصنوعی پایه برای رفع اشکال',
-      'پاسخ به تمامی سوالات درسی',
-      'پشتیبانی ۱۲/۷',
+     "دسترسی به دروس ریاضی ، فیزیک و زیست شناسی",
+      "دسترسی به تمام کنکورها",
+      "دسترسی به تمام امتحانات نهایی",
+      "یک میلیون توکن پرسینو برای هر کاربر در ماه"
     ],
     popular: false
   },
   {
-    name: 'پلن پیشرفته',
-    price: '979,000',
+    name: 'پلن سالانه',
+    price: '588,000',
     description: 'بهترین انتخاب برای موفقیت در کنکور',
     icon: <Rocket className="h-6 w-6" />,
     features: [
-      'تمام امکانات پلن پایه',
-      'هوش مصنوعی پیشرفته‌تر با قابلیت تحلیل عمیق',
-      'طراحی آزمون‌های شبیه‌سازی شده کنکور توسط هوش مصنوعی',
-      'گزارش‌های روزانه با جزئیات کامل',
-      'امکان پرسیدن تعداد سوالات بیشتر'
+        "تمام امکانات پلن ماهانه",
+        "سی درصد تخفیف نسبت به خرید ماهانه",
+        "مجموع ۱۲۰ میلیون توکن در سال (هر ماه ۱۰ میلیون)",
+        "انتقال توکن‌های استفاده‌ نشده هر ماه به ماه بعد",
+
     ],
     popular: true
   }
@@ -73,7 +78,7 @@ export default function Pricing() {
       {/* Pricing Cards */}
       <section className="mt-20 mb-20 relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto ">
             {plans.map((plan, index) => (
               <motion.div
                 key={index}
@@ -98,8 +103,8 @@ export default function Pricing() {
                   `}>
                     {plan.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">{plan.name}</h3>
-                  <p className="text-gray-700 mb-4">{plan.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center">{plan.name}</h3>
+                  <p className="text-gray-700 mb-4 text-center">{plan.description}</p>
                   <div className="flex items-center justify-center gap-1">
                     <span className="text-4xl font-bold text-gray-800">{plan.price}</span>
                     <span className="text-gray-600">تومان / ماه</span>
@@ -123,6 +128,7 @@ export default function Pricing() {
                       ? 'bg-[#46988F] hover:bg-[#5AB5AC] text-white' 
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                   }`}
+                    onClick={() => window.location.href = "https://chat.porsino.org/payment"}
                 >
                   انتخاب این پلن
                 </Button>
