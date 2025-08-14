@@ -28,7 +28,7 @@ const plans = [
   },
   {
     name: 'پلن سالانه',
-    price: '588,000',
+    price: '667,000',
     description: 'بهترین انتخاب برای موفقیت در کنکور',
     icon: <Rocket className="h-6 w-6" />,
     features: [
@@ -105,10 +105,16 @@ export default function Pricing() {
                   </div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center">{plan.name}</h3>
                   <p className="text-gray-700 mb-4 text-center">{plan.description}</p>
-                  <div className="flex items-center justify-center gap-1">
-                    <span className="text-4xl font-bold text-gray-800">{plan.price}</span>
-                    <span className="text-gray-600">تومان / ماه</span>
-                  </div>
+                    <div className="flex items-center justify-center gap-1">
+                      <span className="text-4xl font-bold text-gray-800">{plan.price}</span>
+                      <span className="text-gray-600">تومان / ماه</span>
+                    </div>
+
+                    {plan.name === 'پلن سالانه' && (
+                      <div className="text-s text-gray-500 mt-1">
+                        معادل سالانه 8,006,000 تومان
+                      </div>
+                    )}
                 </div>
 
                 <div className="space-y-4 mb-8">
