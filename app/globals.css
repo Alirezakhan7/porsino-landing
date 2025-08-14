@@ -237,9 +237,8 @@
   }
 }
 @media (max-width: 768px) {
-  body {
-    padding-top: 4.5rem; /* فاصله مناسب برای جلوگیری از هم‌پوشانی در موبایل */
-  }
+  .hero-section { padding-top: 4.5rem; }
+  /* یا اگر خواستی: main { padding-top: 4.5rem; } */
 }
 /* Justify all paragraph and list text */
 p, li, h1, h2, h3, h4, h5, h6 {
@@ -311,4 +310,11 @@ html, body {
     width: 32px;
     height: 32px;
   }
+}
+.cv {
+  content-visibility: auto;
+  contain-intrinsic-size: 600px; /* یک ارتفاع تقریبی برای جلوگیری از پرش */
+}
+html, body {
+  background-color: #fff;   /* ← این مهم‌ترینه */
 }

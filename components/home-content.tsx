@@ -1,12 +1,9 @@
 "use client";
 import React, { useRef } from 'react';
-
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ReviewsSection from '@/components/ReviewsSection';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -26,13 +23,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  EffectCoverflow,
-  Navigation,
-  Pagination,
-  Autoplay,
-} from "swiper/modules";
 import { RippleEffect } from "@/components/ui/ripple-effect";
 import {
   ResponsiveContainer,
@@ -354,7 +344,10 @@ export default function HomeContent() {
                     src="/assets/chatbot_porsino.png"
                     alt="پرسینو اپلیکیشن"
                     width={1200}
-                    height={600}
+                    height={1600}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 600px"
                     className="w-full h-auto"
                   />
 
@@ -367,7 +360,7 @@ export default function HomeContent() {
       </section>
 
       {/* Subjects Section */}
-      <section className="subjects-section pt-12 pb-16" dir="rtl">
+      <section className="subjects-section pt-12 pb-16 cv" dir="rtl" >
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-extrabold text-center mb-12 text-gray-900">
             از کدوم معلم سوال داری؟
@@ -387,6 +380,7 @@ export default function HomeContent() {
                     src={subject.image}
                     alt={subject.name}
                     fill
+                    sizes="(max-width: 768px) 60vw, (max-width: 1024px) 33vw, 280px"
                     className="object-cover transition-all duration-300 group-hover:blur-[2px]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -425,7 +419,7 @@ export default function HomeContent() {
       </section>
 
       {/* More About Our Project Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 cv">
         <div className="container mx-auto px-6">
           <div className="space-y-16">
             {/* Header */}
@@ -530,6 +524,7 @@ export default function HomeContent() {
                       alt="دانش‌آموزان پرسینو"
                       fill
                       className="object-cover"
+                      sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 500px"
                     />
              
 
@@ -602,6 +597,7 @@ export default function HomeContent() {
                     alt="دانش‌آموزان پرسینو"
                     fill
                     className="object-cover"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1024px) 60vw, 650px"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <motion.div
@@ -616,7 +612,7 @@ export default function HomeContent() {
               </motion.div>
             </div>
        {/* User Growth با بک‌گراند Bubble و متن‌های Justify */}
-        <section className="relative py-12 overflow-visible">
+        <section className="relative py-12 overflow-visible cv">
           {/* حباب‌های پس‌زمینه با رنگ کم‌رنگ‌تر */}
           <span className="absolute -top-28 -right-24 w-72 h-72 bg-[#D5F4EF] rounded-full blur-3xl opacity-40 z-0" />
           <span className="absolute top-[30%] -left-24 w-60 h-60 bg-[#BFF0E7] rounded-full blur-3xl opacity-30 z-0" />
@@ -694,8 +690,9 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
         {/* Support Section with Ripple Effect */}
-        <section className="bg-[#46988F] relative py-20">
+        <section className="bg-[#46988F] relative py-20 cv">
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -770,7 +767,7 @@ export default function HomeContent() {
 
 
       {/* Benefits Section */}
-      <div className="block lg:hidden">
+      <div className="block lg:hidden cv">
         <section className="py-20 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-6">
             <div className="text-center max-w-3xl mx-auto mb-12">
@@ -803,7 +800,7 @@ export default function HomeContent() {
       </div>
 
       {/* Comparison Section */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block cv">
         <section className="py-16 ">
           <div className="container mx-auto px-4">
             <div className="relative rounded-2xl overflow-hidden shadow-lg min-h-[500px]">
@@ -813,6 +810,7 @@ export default function HomeContent() {
                 alt="مزایای پرسینو"
                 fill
                 className="object-cover object-[top_center]"
+                sizes="(max-width: 1024px) 100vw, 1200px"
               />
               {/* Overlay */}
               <div className="relative z-20 bg-white/80 backdrop-blur-sm p-8 rounded-2xl min-h-[500px] flex items-center justify-center">
@@ -875,7 +873,7 @@ export default function HomeContent() {
 
       {/* Final Call to Action */}
       <section>
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 cv">
           <CtaSection />
         </div>
       </section>
