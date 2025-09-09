@@ -6,10 +6,10 @@ import { Check, Users, Trophy, Clock, Target, Sparkles, Zap, Award, Lightbulb } 
 import CtaSection from "@/components/Section";
 
 const stats = [
-  { number: "۵۰۰+", label: "دانش‌آموز فعال" },
-  { number: "۹۸٪", label: "رضایت کاربران" },
+  { number: "200+", label: "دانش‌آموز فعال" },
+  { number: "93٪", label: "رضایت کاربران" },
   { number: "۲۴/۷", label: "پشتیبانی آنلاین" },
-  { number: "۹۴۸۸۵+", label: "پرسش و پاسخ" },
+  { number: "۹۸۸۵+", label: "پرسش و پاسخ" },
 ];
 
 const features = [
@@ -132,7 +132,7 @@ export default function About() {
             >
               <h2 className="text-3xl font-bold text-gray-900">داستان ما</h2>
               <p className="text-gray-600 leading-relaxed">
-                پرسینو در سال ۱۴۰۲ با هدف ارائه خدمات آموزشی هوشمند و شخصی‌سازی
+                پرسینو در سال ۱۴۰3 با هدف ارائه خدمات آموزشی هوشمند و شخصی‌سازی
                 شده متولد شد. ما معتقدیم هر دانش‌آموز مسیر یادگیری منحصر به فرد
                 خود را دارد و با استفاده از هوش مصنوعی، این مسیر را برای هر فرد
                 بهینه‌سازی می‌کنیم.
