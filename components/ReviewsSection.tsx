@@ -70,7 +70,7 @@ const ReviewsSection = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-3xl font-bold mb-4 text-center"
+            className="text-3xl font-bold mb-4 text-center text-gray-900"
           >
             نظرات دانش‌آموزان
           </motion.h2>
