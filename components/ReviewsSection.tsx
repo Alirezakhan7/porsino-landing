@@ -1,5 +1,5 @@
 "use client";
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote, Star, Sparkles } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -7,58 +7,58 @@ const ReviewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
 
-const reviews = [
-  {
-    name: "سارا محمدی",
-    role: "دانش‌آموز پایه دوازدهم",
-    text: "همیشه توی زیست عقب می‌افتادم و نمی‌دونستم از کجا شروع کنم. پرسینو برام مسیر خوندن رو مشخص کرد و بالاخره از سردرگمی دراومدم.",
-    initials: "SM"
-  },
-  {
-    name: "علی رضایی",
-    role: "دانش‌آموز پایه یازدهم",
-    text: "فکر می‌کردم زیست رو بلدم، ولی پرسینو دقیقاً نشون داد کجاها اشکال دارم. تمرکزم رفت روی همون ضعف‌ها و نتیجه‌ام خیلی بهتر شد.",
-    initials: "AR"
-  },
-  {
-    name: "مریم احمدی",
-    role: "دانش‌آموز پایه دوازدهم",
-    text: "مشکل من حفظ کردن بدون فهم بود. توضیح‌های پرسینو کمک کرد مفهومی بخونم و دیگه مطالب یادم نره.",
-    initials: "MA"
-  },
-  {
-    name: "محمد حسینی",
-    role: "دانش‌آموز پایه دهم",
-    text: "اوایل زیست برام خیلی سنگین بود. پرسینو مبحث‌ها رو ساده و مرحله‌به‌مرحله توضیح داد و ترسم از این درس ریخت.",
-    initials: "MH"
-  },
-  {
-    name: "نگین خادمی",
-    role: "دانش‌آموز پایه یازدهم",
-    text: "استرسم بیشتر به‌خاطر سوال‌های بی‌جوابم بود. با پرسینو هر وقت گیر می‌کردم سریع جواب می‌گرفتم و خیالم راحت‌ شد.",
-    initials: "NK"
-  },
-  {
-    name: "پارسا نوروزی",
-    role: "دانش‌آموز پایه دوازدهم",
-    text: "مشکل اصلی من کمبود وقت بود. پرسینو برام برنامه‌ای چید که دقیقاً با تایم خالی‌ام جور بود و دیگه عقب نمی‌مونم.",
-    initials: "PN"
-  },
-  {
-    name: "الهام کریمی",
-    role: "دانش‌آموز پایه دهم",
-    text: "بعضی مبحث‌های زیست رو اصلاً نمی‌فهمیدم. پرسینو با مثال و توضیح ساده کاری کرد که بالاخره جا بیفته.",
-    initials: "EK"
-  },
-  {
-    name: "رضا احمدیان",
-    role: "دانش‌آموز پایه دوازدهم",
-    text: "توی آزمون‌ها همیشه از نوع سوالات ضربه می‌خوردم. تمرین‌هایی که پرسینو داد باعث شد سر جلسه غافلگیر نشم.",
-    initials: "RA"
-  }
-];
+  const reviews = [
+    {
+      name: "سارا محمدی",
+      role: "دانش‌آموز پایه دوازدهم",
+      text: "همیشه توی زیست عقب می‌افتادم و نمی‌دونستم از کجا شروع کنم. پرسینو برام مسیر خوندن رو مشخص کرد و بالاخره از سردرگمی دراومدم.",
+      initials: "SM"
+    },
+    {
+      name: "علی رضایی",
+      role: "دانش‌آموز پایه یازدهم",
+      text: "فکر می‌کردم زیست رو بلدم، ولی پرسینو دقیقاً نشون داد کجاها اشکال دارم. تمرکزم رفت روی همون ضعف‌ها و نتیجه‌ام خیلی بهتر شد.",
+      initials: "AR"
+    },
+    {
+      name: "مریم احمدی",
+      role: "دانش‌آموز پایه دوازدهم",
+      text: "مشکل من حفظ کردن بدون فهم بود. توضیح‌های پرسینو کمک کرد مفهومی بخونم و دیگه مطالب یادم نره.",
+      initials: "MA"
+    },
+    {
+      name: "محمد حسینی",
+      role: "دانش‌آموز پایه دهم",
+      text: "اوایل زیست برام خیلی سنگین بود. پرسینو مبحث‌ها رو ساده و مرحله‌به‌مرحله توضیح داد و ترسم از این درس ریخت.",
+      initials: "MH"
+    },
+    {
+      name: "نگین خادمی",
+      role: "دانش‌آموز پایه یازدهم",
+      text: "استرسم بیشتر به‌خاطر سوال‌های بی‌جوابم بود. با پرسینو هر وقت گیر می‌کردم سریع جواب می‌گرفتم و خیالم راحت‌ شد.",
+      initials: "NK"
+    },
+    {
+      name: "پارسا نوروزی",
+      role: "دانش‌آموز پایه دوازدهم",
+      text: "مشکل اصلی من کمبود وقت بود. پرسینو برام برنامه‌ای چید که دقیقاً با تایم خالی‌ام جور بود و دیگه عقب نمی‌مونم.",
+      initials: "PN"
+    },
+    {
+      name: "الهام کریمی",
+      role: "دانش‌آموز پایه دهم",
+      text: "بعضی مبحث‌های زیست رو اصلاً نمی‌فهمیدم. پرسینو با مثال و توضیح ساده کاری کرد که بالاخره جا بیفته.",
+      initials: "EK"
+    },
+    {
+      name: "رضا احمدیان",
+      role: "دانش‌آموز پایه دوازدهم",
+      text: "توی آزمون‌ها همیشه از نوع سوالات ضربه می‌خوردم. تمرین‌هایی که پرسینو داد باعث شد سر جلسه غافلگیر نشم.",
+      initials: "RA"
+    }
+  ];
 
-  // Responsive handler to determine how many items to show
+  // Responsive handler
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -76,36 +76,33 @@ const reviews = [
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev + itemsPerPage >= reviews.length ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === 0 ? Math.max(0, reviews.length - itemsPerPage) : prev - 1
     );
   };
 
   return (
     <section className="relative py-24 bg-[#0A0A0A] overflow-hidden" dir="rtl">
-      
-      {/* --- Mosaic Background Effect --- */}
-      {/* Small tight grid to simulate mosaic tiles */}
+
+      {/* --- Background Effects --- */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
-      
-      {/* Gradient Vignette to fade edges */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none"></div>
       
-      {/* Ambient Glows */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none"></div>
+      {/* Glows hidden on mobile for performance */}
+      <div className="hidden md:block absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="hidden md:block absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-           <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#46988F]/30 bg-[#46988F]/10 text-[#46988F] text-xs font-bold uppercase tracking-wider backdrop-blur-md mb-6"
@@ -122,7 +119,7 @@ const reviews = [
           >
             تجربه دانش‌آموزان <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#46988F] to-teal-200">موفق</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -133,137 +130,109 @@ const reviews = [
           </motion.p>
         </div>
 
-        {/* Custom Navigation Buttons (Visible on Desktop) */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-12 z-20 hidden md:block">
-             <button
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110"
-              >
-                <ChevronLeft className="w-6 h-6" />
-             </button>
+        {/* --- Navigation Buttons (Unified for Mobile & Desktop) --- */}
+        {/* دکمه قبلی */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-12 z-20">
+          <button
+            onClick={prevSlide}
+            aria-label="Previous Slide"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-12 z-20 hidden md:block">
-             <button
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110"
-              >
-                <ChevronRight className="w-6 h-6" />
-             </button>
+
+        {/* دکمه بعدی */}
+        <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-12 z-20">
+          <button
+            onClick={nextSlide}
+            aria-label="Next Slide"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
+          >
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
         </div>
 
         {/* Carousel Window */}
-        <div className="relative overflow-hidden px-4 md:px-12 py-8 -my-8">
-            <motion.div 
-              className="flex gap-0"
-              animate={{
-                x: `${currentIndex * (100 / itemsPerPage)}%` 
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            >
-              {reviews.map((review, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0 px-4"
-                  style={{ 
-                    width: `${100 / itemsPerPage}%` 
-                  }}
-                >
-                  <div className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
-                    
-                    {/* Hover Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#46988F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div className="relative overflow-hidden px-2 md:px-12 py-8 -my-8">
+          <motion.div
+            className="flex gap-0"
+            animate={{
+              x: `${currentIndex * (100 / itemsPerPage)}%`
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            {reviews.map((review, index) => (
+              <motion.div
+                key={index}
+                className="flex-shrink-0 px-2 md:px-4"
+                style={{
+                  width: `${100 / itemsPerPage}%`
+                }}
+              >
+                <div className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-6 md:p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
 
-                    <div>
-                        {/* Quote Icon */}
-                        <div className="w-12 h-12 rounded-xl bg-[#46988F]/10 flex items-center justify-center text-[#46988F] mb-6 group-hover:scale-110 transition-transform duration-300">
-                             <Quote className="w-6 h-6 fill-current" />
-                        </div>
-                        
-                       <p className="text-gray-300 leading-relaxed text-base md:text-lg font-medium mb-6 relative z-10">
-                          "{review.text}"
-                        </p>
+                  {/* Hover Glow */}
+                  <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-[#46988F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  <div>
+                    {/* Quote Icon */}
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#46988F]/10 flex items-center justify-center text-[#46988F] mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Quote className="w-5 h-5 md:w-6 md:h-6 fill-current" />
                     </div>
 
-                    <div className="flex items-center gap-4 border-t border-white/5 pt-6 relative z-10">
-                        {/* Initials Avatar */}
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#46988F] to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
-                             {review.initials || "U"}
-                        </div>
-                        
-                        <div>
-                            <h4 className="font-bold text-white text-base tracking-tight">{review.name}</h4>
-                            <p className="text-xs text-[#46988F] font-bold uppercase tracking-wider">{review.role}</p>
-                        </div>
-                        
-                        {/* 5 Stars */}
-                        <div className="mr-auto flex gap-0.5">
-                            {[1,2,3,4,5].map(i => (
-                                <Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                            ))}
-                        </div>
-                    </div>
-
+                    <p className="text-gray-300 leading-relaxed text-sm md:text-lg font-medium mb-6 relative z-10">
+                      "{review.text}"
+                    </p>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
+
+                  <div className="flex items-center gap-4 border-t border-white/5 pt-6 relative z-10">
+                    {/* Initials Avatar */}
+                    <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-tr from-[#46988F] to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
+                      {review.initials || "U"}
+                    </div>
+
+                    <div className="min-w-0">
+                      <h4 className="font-bold text-white text-sm md:text-base tracking-tight truncate">{review.name}</h4>
+                      <p className="text-[10px] md:text-xs text-[#46988F] font-bold uppercase tracking-wider truncate">{review.role}</p>
+                    </div>
+
+                    {/* 5 Stars */}
+                    <div className="mr-auto flex gap-0.5 shrink-0">
+                      {[1, 2, 3, 4, 5].map(i => (
+                        <Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-        
-        {/* Mobile Controls (Dots) */}
-            <div className="flex items-center justify-center gap-4 mt-8 md:hidden">
-            {/* Prev */}
-            <button
-              type="button"
-              aria-label="اسلاید قبلی"
-              onClick={() =>
-                setCurrentIndex((prev) =>
-                  prev === 0 ? reviews.length - 1 : prev - 1
-                )
-              }
-              className="h-10 w-10 rounded-full bg-white/20 text-white flex items-center justify-center"
-            >
-              ‹
-            </button>
 
-            {/* Dots */}
-            <div className="flex gap-2">
-              {reviews
-                .slice(0, reviews.length - (itemsPerPage - 1))
-                .map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    aria-label={`رفتن به اسلاید ${idx + 1}`}
-                    onClick={() => setCurrentIndex(idx)}
-                    className="p-3"
-                  >
-                    <span
-                      className={`block h-2 rounded-full transition-all duration-300 ${
-                        Math.floor(currentIndex) === idx
-                          ? "w-8 bg-[#46988F]"
-                          : "w-2 bg-white/20"
-                      }`}
-                    />
-                  </button>
-                ))}
-            </div>
-
-            {/* Next */}
-            <button
-              type="button"
-              aria-label="اسلاید بعدی"
-              onClick={() =>
-                setCurrentIndex((prev) =>
-                  prev === reviews.length - 1 ? 0 : prev + 1
-                )
-              }
-              className="h-10 w-10 rounded-full bg-white/20 text-white flex items-center justify-center"
-            >
-              ›
-            </button>
-          </div>
-
-
+        {/* Mobile Indicators (Just Dots) - Removed the arrow buttons from here */}
+        <div className="flex items-center justify-center gap-2 mt-8">
+          {reviews
+            .slice(0, reviews.length - (itemsPerPage - 1))
+            .map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                aria-label={`رفتن به اسلاید ${idx + 1}`}
+                onClick={() => setCurrentIndex(idx)}
+                className="p-2"
+              >
+                <span
+                  className={`block h-1.5 rounded-full transition-all duration-300 ${
+                    Math.floor(currentIndex) === idx
+                      ? "w-6 bg-[#46988F]"
+                      : "w-1.5 bg-white/20"
+                  }`}
+                />
+              </button>
+            ))}
+        </div>
 
       </div>
     </section>
