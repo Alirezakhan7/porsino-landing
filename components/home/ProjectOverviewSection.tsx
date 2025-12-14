@@ -11,17 +11,19 @@ import {
   Zap,
   CheckCircle2
 } from "lucide-react";
+import type { Variants } from "framer-motion";
 
 // --- Animations ---
-const fadeUpVariants = {
+const fadeUpVariants: Variants = {
   hidden: { opacity: 0, y: 20, filter: "blur(5px)" },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
+    transition: { duration: 0.6, ease: [0.4, 0, 1, 1] },
+  },
 };
+
 
 const staggerContainer = {
   visible: { transition: { staggerChildren: 0.1 } }

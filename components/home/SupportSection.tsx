@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { RippleEffect } from "@/components/ui/ripple-effect";
 import { Users, Target, BookOpen, Sparkles, ArrowRight, HelpCircle } from "lucide-react";
-
+import type { Variants } from "framer-motion";
 export function SupportSection() {
   return (
         <section className="bg-[#46988F] relative py-24 overflow-hidden" dir="rtl">
@@ -17,7 +17,7 @@ export function SupportSection() {
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: [0.4, 0, 1, 1] }}
                 className="relative min-h-[400px] flex flex-col justify-center"
               >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-60">

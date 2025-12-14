@@ -1,6 +1,7 @@
 // src/components/home/HeroSection.tsx
 "use client";
 
+import type { Variants } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import {
   motion,
@@ -24,22 +25,23 @@ export function HeroSection() {
     },
   };
 
-  const itemVariants = {
-    hidden: {
-      opacity: 0.001,
-      y: 20,
-      filter: "blur(4px)",
+  const itemVariants: Variants = {
+  hidden: {
+    opacity: 0.001,
+    y: 20,
+    filter: "blur(4px)",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.6,
+      ease: [0.4, 0, 1, 1],
     },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
-    },
-  };
+  },
+};
+
 
   // --- 2. Pointer Halo Logic (Framer Motion) ---
   const mouseX = useMotionValue(0);

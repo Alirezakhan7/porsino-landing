@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import CtaSection from "@/components/Section";
+import CtaSection from "@/components/home/Section";
 import { ShieldCheck, Lock, UserCheck, Mail, FileText, AlertCircle } from "lucide-react";
 
 export default function PrivacyPolicy() {

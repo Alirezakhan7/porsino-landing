@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BookCheck, UserX, FileWarning, Lock, AlertTriangle, BadgeCheck } from "lucide-react";
-import CtaSection from "@/components/Section";
+import CtaSection from "@/components/home/Section";
 
 export default function Terms() {
   return (

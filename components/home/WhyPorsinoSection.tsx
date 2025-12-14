@@ -1,5 +1,5 @@
+"use client";
 import { motion } from "framer-motion";
-import React from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import {
@@ -11,22 +11,27 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import type { Variants } from "framer-motion";
 
-
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 100 },
+  },
 };
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // انیمیشن آبشاری برای آیتم‌های لیست
+      staggerChildren: 0.15,
     },
   },
 };
+
 
 const whyPorsinoData = {
   title: "چرا پرسینو؟",
@@ -68,17 +73,17 @@ export function WhyPorsinoSection() {
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <motion.div
             animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.5, 0.4] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 15, repeat: Infinity, ease: [0.4, 0, 0.2, 1] }}
             className="absolute -top-28 -right-24 w-72 h-72 bg-[#D5F4EF] rounded-full blur-3xl"
           />
           <motion.div
             animate={{ scale: [1, 1.05, 1], opacity: [0.3, 0.4, 0.3] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+            transition={{ duration: 20, repeat: Infinity, ease: [0.4, 0, 0.2, 1], delay: 5 }}
             className="absolute top-[30%] -left-24 w-60 h-60 bg-[#BFF0E7] rounded-full blur-3xl"
           />
           <motion.div
             animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0.6, 0.5] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 10 }}
+            transition={{ duration: 25, repeat: Infinity, ease: [0.4, 0, 0.2, 1], delay: 10 }}
             className="absolute bottom-0 right-1/3 w-64 h-64 bg-[#EAFBF8] rounded-full blur-3xl"
           />
         </div>
