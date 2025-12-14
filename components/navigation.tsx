@@ -109,13 +109,15 @@ export function Navigation() {
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-[#9B9B9B]"
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-[#9B9B9B]"
+                  aria-label="باز کردن منوی ناوبری"
+                >
+                  <Menu className="h-6 w-6" aria-hidden="true" />
+                </Button>
+
             </div>
           </div>
         </div>
