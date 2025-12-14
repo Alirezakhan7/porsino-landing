@@ -213,7 +213,9 @@ const ReviewsSection = () => {
                     </div>
 
                     <div className="min-w-0">
-                      <h4 className="font-bold text-white text-sm md:text-base tracking-tight truncate">{review.name}</h4>
+                      <h3 className="font-bold text-white text-sm md:text-base tracking-tight truncate">
+                        {review.name}
+                      </h3>
                       <p className="text-[10px] md:text-xs text-[#46988F] font-bold uppercase tracking-wider truncate">{review.role}</p>
                     </div>
 
