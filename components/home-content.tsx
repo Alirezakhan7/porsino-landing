@@ -1,19 +1,13 @@
-// components/home-content.tsx  (بدون "use client")
-import dynamic from "next/dynamic";
-
-import CtaSection from "./home/Section";
+// components/home-content.tsx  (Server Component)
 import { HeroSection } from "@/components/home/HeroSection";
 import { WhyPorsinoSection } from "@/components/home/WhyPorsinoSection";
 import { BenefitsSection } from "@/components/home/BenefitsSection";
 import { AdvantagesSection } from "@/components/home/AdvantagesSection";
 import { ProjectOverviewSection } from "@/components/home/ProjectOverviewSection";
 import { SupportSection } from "@/components/home/SupportSection";
+import CtaSection from "./home/Section";
 
-// Reviews را جداگانه Client و Lazy کن
-const ReviewsSection = dynamic(() => import("@/components/ReviewsSection"), {
-  ssr: false,
-  loading: () => null,
-});
+import ReviewsLazy from "@/components/ReviewsLazy.client";
 
 export default function HomeContent() {
   return (
@@ -24,7 +18,7 @@ export default function HomeContent() {
       <AdvantagesSection />
       <ProjectOverviewSection />
       <SupportSection />
-      <ReviewsSection />
+      <ReviewsLazy />
       <section>
         <CtaSection />
       </section>
