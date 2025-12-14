@@ -71,7 +71,7 @@ export function BenefitsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="class-center text-3xl md:text-5xl font-black text-white tracking-tight mb-6"
+            className="text-center text-3xl md:text-5xl font-black text-white tracking-tight mb-6"
           >
             مزایایی که <span className="class-center text-transparent bg-clip-text bg-gradient-to-r from-[#46988F] to-teal-200">تفاوت ایجاد می‌کنند</span>
           </motion.h2>

@@ -190,7 +190,7 @@ export function ProjectOverviewSection() {
               <Zap className="w-3 h-3" />
               صرفه‌جویی
             </div>
-            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
+            <h3 className="text-xl md:text-4xl font-bold text-gray-900 leading-tight">
               آموزش باکیفیت، <span className="text-[#46988F]">بدون هزینه سنگین</span>
             </h3>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed text-justify">
@@ -254,13 +254,13 @@ export function ProjectOverviewSection() {
                 <span className="text-sm font-bold text-white tracking-wide">پرسینو پلاس</span>
             </div>
             
-              <h3 className="text-center text-3xl md:text-5xl font-black tracking-tight leading-tight">
+              <h3 className="text-center text-2xl md:text-5xl font-black tracking-tight leading-tight">
                 یادگیری عمیق، <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#46988F] to-teal-200">
                   با اختیار شما
                 </span>
               </h3>
             
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
+            <p className="text-base md:text-xl text-gray-300 leading-relaxed font-light">
               اینجا هوش مصنوعی نقش معلم را بازی می‌کند، نه پاسخ‌نامه.
               به‌جای تحویل فوری جواب، با سؤال‌های مفهومی و راهنمایی مرحله‌ای
               کمک می‌کند خودتان مسئله را حل کنید.
