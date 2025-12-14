@@ -162,28 +162,28 @@ const ReviewsSection = () => {
         {/* نکته مهم: dir="ltr" می‌دهیم تا محاسبات ریاضی اسلایدر درست شود */}
         <div className="relative overflow-hidden px-2 md:px-12 py-8 -my-8" dir="ltr">
           <motion.div
-            className="flex gap-0 touch-pan-y cursor-grab active:cursor-grabbing"
-            animate={{
-              // حرکت به سمت منفی X (چپ) برای دیدن آیتم‌های بعدی
-              x: `-${currentIndex * (100 / itemsPerPage)}%`
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            
-            // --- تنظیمات درگ ---
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2}
-            onDragEnd={(e, { offset }) => {
-              // اگر انگشت را به سمت راست کشیدید (عدد مثبت)
-              if (offset.x > 50) {
-                prevSlide(); // قبلاً اینجا nextSlide بود یا برعکس عمل می‌کرد
-              } 
-              // اگر انگشت را به سمت چپ کشیدید (عدد منفی)
-              else if (offset.x < -50) {
-                nextSlide();
-              }
-            }}
-          >
+              className="flex gap-0 touch-pan-y cursor-grab active:cursor-grabbing"
+              animate={{
+                x: `-${currentIndex * (100 / itemsPerPage)}%`
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              
+              // --- تنظیمات درگ ---
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, { offset }) => {
+                // اصلاح جهت:
+                // کشیدن به راست (> 50) = دیدن اسلاید قبلی
+                if (offset.x > 50) {
+                  prevSlide();
+                } 
+                // کشیدن به چپ (< -50) = دیدن اسلاید بعدی
+                else if (offset.x < -50) {
+                  nextSlide();
+                }
+              }}
+            >
             {reviews.map((review, index) => (
               <motion.div
                 key={index}
