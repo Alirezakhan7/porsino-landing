@@ -165,7 +165,6 @@ export function HeroSection() {
                     priority
                     fetchPriority="high"
                     sizes="(max-width: 768px) 100vw, 520px"
-                    quality={70}
                     className="w-full h-auto rounded-2xl"
                   />
               </motion.div>
