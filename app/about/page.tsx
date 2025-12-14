@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check, Users, Trophy, Clock, Target, Sparkles, Zap, Award, Lightbulb } from "lucide-react";
-import CtaSection from "@/components/Section";
+import CtaSection from "@/components/home/Section";
 
 const stats = [
   { number: "200+", label: "دانش‌آموز فعال" },
@@ -161,9 +161,7 @@ export default function About() {
 
       {/* Call to Action */}
       <section>
-        <div className="container mx-auto px-6">
           <CtaSection />
-        </div>
       </section>
     </div>
   );
