@@ -135,22 +135,28 @@ const ReviewsSection = () => {
         </div>
 
         {/* Custom Navigation Buttons (Visible on Desktop) */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-12 z-20 ">
-             <button
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110"
-              >
-                <ChevronLeft className="w-6 h-6" />
-             </button>
+        <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-12 z-20">
+          <button
+            type="button"
+            onClick={nextSlide}
+            aria-label="رفتن به نظر بعدی"
+            className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110"
+          >
+            <ChevronLeft className="w-6 h-6" aria-hidden="true" />
+          </button>
         </div>
-        <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-12 z-20 ">
-             <button
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110"
-              >
-                <ChevronRight className="w-6 h-6" />
-             </button>
+
+        <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-12 z-20">
+          <button
+            type="button"
+            onClick={prevSlide}
+            aria-label="رفتن به نظر قبلی"
+            className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110"
+          >
+            <ChevronRight className="w-6 h-6" aria-hidden="true" />
+          </button>
         </div>
+
 
         {/* Carousel Window */}
         <div className="relative overflow-hidden px-4 md:px-12 py-8 -my-8">
@@ -212,15 +218,22 @@ const ReviewsSection = () => {
         
         {/* Mobile Controls (Dots) */}
         <div className="flex justify-center gap-2 mt-8 md:hidden">
-            {reviews.slice(0, reviews.length - (itemsPerPage - 1)).map((_, idx) => (
-                <button
-                    key={idx}
-                    onClick={() => setCurrentIndex(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                        Math.floor(currentIndex) === idx ? "w-8 bg-[#46988F]" : "w-2 bg-white/20"
-                    }`}
-                />
-            ))}
+            {reviews.slice(0, reviews.length - (itemsPerPage - 1)).map((_, idx) => {
+            const isActive = Math.floor(currentIndex) === idx;
+
+            return (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => setCurrentIndex(idx)}
+                aria-label={`رفتن به نظر شماره ${idx + 1}`}
+                aria-current={isActive ? "true" : undefined}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  isActive ? "w-8 bg-[#46988F]" : "w-2 bg-white/20"
+                }`}
+              />
+            );
+          })}
         </div>
 
       </div>
