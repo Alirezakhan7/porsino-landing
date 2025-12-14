@@ -43,8 +43,8 @@ export function Navigation() {
                 <Image
                   src="/assets/logo.png"
                   alt="Porsino Logo"
-                  width={40}
-                  height={40}
+                  width={60}
+                  height={60}
                   className="transition-colors duration-200 group-hover:brightness-110"
                 />
                 <span className="text-xl font-bold text-[#9B9B9B]">پرسینو</span>
