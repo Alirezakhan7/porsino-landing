@@ -13,7 +13,10 @@ const advantages = [
 
 export function AdvantagesSection() {
   return (
-    <section className="relative py-24 bg-[#0A0A0A] overflow-hidden rounded-[40px]" dir="rtl">
+<section
+  className="hidden md:block relative py-16 bg-[#0A0A0A] overflow-hidden"
+  dir="rtl"
+>
       
       {/* --- Background Effects --- */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
@@ -27,17 +30,22 @@ export function AdvantagesSection() {
         <div className="relative min-h-[600px] flex items-center justify-center">
             
             {/* 1. Mobile/Tablet View (Vertical Grid) */}
-            <div className="block lg:hidden w-full max-w-md mx-auto space-y-8">
-                <div className="text-center mb-12">
-                     <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-4xl font-black text-white mb-4"
-                    >
-                        مزایای <span className="text-[#46988F]">پرسینو</span>
-                    </motion.h2>
-                    <p className="text-gray-400">همه چیزهایی که برای موفقیت نیاز دارید</p>
-                </div>
+            <div className="text-center block lg:hidden w-full max-w-md mx-auto space-y-8">
+               <div className="block lg:hidden w-full max-w-md mx-auto space-y-8 text-center">
+  <div className="mb-12 flex flex-col items-center">
+    <motion.h2 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="text-4xl font-black text-white mb-4 text-center"
+    >
+      مزایای <span className="text-[#46988F]">پرسینو</span>
+    </motion.h2>
+    <p className="text-gray-400 text-center">
+      همه چیزهایی که برای موفقیت نیاز دارید
+    </p>
+  </div>
+</div>
+
                 
                 <div className="grid gap-4">
                     {advantages.map((item, index) => (
@@ -77,9 +85,9 @@ export function AdvantagesSection() {
                         <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#46988F]/20 animate-[spin_20s_linear_infinite]"></div>
                         
                         <div className="text-center p-6">
-                            <h2 className="text-4xl font-black text-white tracking-tight">
+                            <h2 className="text-center text-4xl font-black text-white tracking-tight">
                                 مزایای<br/>
-                                <span className="text-[#46988F] drop-shadow-lg">پرسینو</span>
+                                <span className="text-center text-[#46988F] drop-shadow-lg">پرسینو</span>
                             </h2>
                         </div>
                     </motion.div>

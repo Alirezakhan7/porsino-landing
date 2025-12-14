@@ -42,7 +42,7 @@ export function Navigation() {
               >
                 <Image
                   src="/assets/logo.png"
-                  alt="Persino Logo"
+                  alt="Porsino Logo"
                   width={40}
                   height={40}
                   className="transition-colors duration-200 group-hover:brightness-110"

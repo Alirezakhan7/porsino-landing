@@ -68,9 +68,9 @@ export function SupportSection() {
               <div className="grid grid-cols-2 gap-5 items-stretch justify-center">
                 {[
                   { icon: Users, title: "پشتیبانی جامع", desc: "برای تمامی کاربران" },
-                  { icon: Target, title: "پاسخ سریع", desc: "زیر ۲ دقیقه" },
-                  { icon: BookOpen, title: "راهنمای کامل", desc: "آموزش ویدیویی پلتفرم" },
-                  { icon: Sparkles, title: "پشتیبانی ویژه", desc: "مشاوره اختصاصی VIP" },
+                  { icon: Target, title: "پاسخ سریع", desc: "به تمام سوالات" },
+                  { icon: BookOpen, title: "راهنمای کامل", desc: "استفاده از پلتفرم" },
+                  { icon: Sparkles, title: "پشتیبانی ویژه", desc: "خدمات شخصی‌سازی شده" },
                 ].map((item, index) => (
                   <motion.div
                     key={index}

@@ -115,11 +115,11 @@ const CtaSection = () => {
             </h2>
 
             <p
-              className={`text-center mb-10 text-lg md:text-xl font-medium transition-colors duration-700 max-w-2xl mx-auto leading-relaxed ${
+              className={`text-center mb-10 text-base md:text-xl font-medium transition-colors duration-700 max-w-2xl mx-auto leading-relaxed ${
                 isVisible ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              همین حالا به جمع هزاران دانش‌آموز موفق پرسینو بپیوندید و آینده
+              همین حالا به جمع دانش‌آموزان موفق پرسینو بپیوندید و آینده
               تحصیلی خود را تضمین کنید.
             </p>
 

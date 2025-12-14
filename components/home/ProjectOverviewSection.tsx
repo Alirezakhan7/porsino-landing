@@ -45,7 +45,7 @@ const achievements = [
   },
   {
     title: "یادگیری عمیق",
-    value: "4x",
+    value: "15٪",
     description: "افزایش ماندگاری مطالب",
     icon: <Brain className="h-6 w-6" />,
   },
@@ -76,10 +76,10 @@ export function ProjectOverviewSection() {
             variants={staggerContainer}
             className="space-y-6"
           >
-            <motion.h2 variants={fadeUpVariants} className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight">
+            <motion.h2 variants={fadeUpVariants} className="text-center text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight">
               آینده آموزش با <span className="text-[#46988F]">هوش مصنوعی</span>
             </motion.h2>
-            <motion.p variants={fadeUpVariants} className="text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto">
+            <motion.p variants={fadeUpVariants} className="text-center text-xl text-gray-500 leading-relaxed max-w-2xl mx-auto">
               پرسینو با ترکیب الگوریتم‌های پیشرفته و متدهای نوین آموزشی، مسیر یادگیری شما را کاملاً شخصی‌سازی می‌کند.
             </motion.p>
           </motion.div>
@@ -128,10 +128,10 @@ export function ProjectOverviewSection() {
               <TrendingUp className="w-3 h-3" />
               عملکرد تحصیلی
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight text-justify">
               افزایش نمرات با یادگیری <span className="text-blue-600">تطبیقی</span>
             </h3>
-            <p className="text-lg text-gray-600 leading-relaxed text-justify">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-justify">
               مطالعات نشان می‌دهد دانش‌آموزانی که از سیستم‌های هوشمند استفاده می‌کنند، تا 
               <span className="font-bold text-gray-900 mx-1">۶۲٪</span> 
               عملکرد بهتری دارند. سیستم پرسینو با شناسایی نقاط ضعف شما، تمریناتی را پیشنهاد می‌دهد که دقیقاً همان چیزی است که نیاز دارید.
@@ -190,16 +190,15 @@ export function ProjectOverviewSection() {
               <Zap className="w-3 h-3" />
               صرفه‌جویی
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
               آموزش باکیفیت، <span className="text-[#46988F]">بدون هزینه سنگین</span>
             </h3>
-            <p className="text-lg text-gray-600 leading-relaxed text-justify">
-              آموزش عالی نباید لوکس باشد. پرسینو جایگزین ده‌ها کلاس خصوصی و کتاب‌های گران‌قیمت است. با هزینه‌ای اندک، به یک معلم خصوصی ۲۴ ساعته دسترسی داشته باشید.
-            </p>
-             <ul className="space-y-4 pt-4">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed text-justify">
+                آموزش باکیفیت می‌تواند مقرون‌به‌صرفه باشد. پرسینو بدون نیاز به کلاس‌های خصوصی و کتاب‌های گران‌قیمت، دسترسی ۲۴ ساعته به یک معلم خصوصی را فراهم می‌کند.            </p>
+             <ul className="text-base md:text-lg space-y-4 pt-4">
               {[
                 "حذف هزینه‌های رفت و آمد و کلاس‌های حضوری",
-                "دسترسی نامحدود به تمام دروس و منابع",
+                "دسترسی نامحدود",
                 "یک اشتراک برای تمام نیازهای تحصیلی"
               ].map((text, i) => (
                 <li key={i} className="flex items-center gap-3 text-gray-700">
@@ -252,32 +251,34 @@ export function ProjectOverviewSection() {
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 backdrop-blur-sm">
                 <Brain className="w-4 h-4 text-[#46988F]" />
-                <span className="text-sm font-bold text-white tracking-wide">ویژگی انحصاری</span>
+                <span className="text-sm font-bold text-white tracking-wide">پرسینو پلاس</span>
             </div>
             
-            <h3 className="text-3xl md:text-5xl font-black tracking-tight leading-tight">
-              آموزش پلاس: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#46988F] to-teal-200">یادگیری عمیق</span>، نه سطحی
-            </h3>
+              <h3 className="text-center text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                یادگیری عمیق، <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#46988F] to-teal-200">
+                  با اختیار شما
+                </span>
+              </h3>
             
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed font-light">
-              در پرسینو، ما ماهی را به شما نمی‌دهیم، ماهیگیری را یادتان می‌دهیم. 
-              وقتی سوالی می‌پرسید، هوش مصنوعی بلافاصله جواب نهایی را نمی‌گوید. 
-              با پرسیدن سوالات هوشمندانه و ارائه سرنخ، شما را هدایت می‌کند تا <strong className="text-white font-bold">خودتان</strong> به پاسخ برسید. 
-              این یعنی یادگیری واقعی که هرگز فراموش نمی‌شود.
+              اینجا هوش مصنوعی نقش معلم را بازی می‌کند، نه پاسخ‌نامه.
+              به‌جای تحویل فوری جواب، با سؤال‌های مفهومی و راهنمایی مرحله‌ای
+              کمک می‌کند خودتان مسئله را حل کنید.
+              اگر خواستید، پاسخ نهایی فقط یک کلیک با شما فاصله دارد.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 text-right md:text-center">
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-bold text-white mb-1">تفکر انتقادی</h4>
-                    <p className="text-sm text-gray-400">تقویت مهارت تحلیل مسائل</p>
+                    <h4 className="text-center font-bold text-white mb-1">تعامل واقعی</h4>
+                    <p className="text-center text-sm text-gray-400">فهمی که در آزمون هم همراهت می‌ماند</p>
                 </div>
                  <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-bold text-white mb-1">یادگیری فعال</h4>
-                    <p className="text-sm text-gray-400">مشارکت در فرآیند حل مسئله</p>
+                    <h4 className="text-center font-bold text-white mb-1">یادگیری فعال</h4>
+                    <p className="text-center text-sm text-gray-400">مشارکت در فرآیند حل مسئله</p>
                 </div>
                  <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="font-bold text-white mb-1">ماندگاری بالا</h4>
-                    <p className="text-sm text-gray-400">تثبیت مطالب در حافظه بلندمدت</p>
+                    <h4 className="text-center font-bold text-white mb-1">ماندگاری بالا</h4>
+                    <p className="text-center text-sm text-gray-400">تثبیت مطالب در حافظه بلندمدت</p>
                 </div>
             </div>
 

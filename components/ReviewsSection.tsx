@@ -6,56 +6,56 @@ const ReviewsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(1);
 
-  const reviews = [
-    {
-      name: "سارا محمدی",
-      role: "دانش‌آموز پایه دوازدهم",
-      text: "پرسینو کمکم کرد برنامه‌ی منظم داشته باشم و در کنکور به هدفم برسم.",
-      initials: "SM"
-    },
-    {
-      name: "علی رضایی",
-      role: "دانش‌آموز پایه یازدهم",
-      text: "هوش مصنوعی پرسینو نقاط ضعف و قوتم را عالی تحلیل کرد.",
-      initials: "AR"
-    },
-    {
-      name: "مریم احمدی",
-      role: "دانش‌آموز پایه دوازدهم",
-      text: "بهترین همراه من در مسیر آمادگی برای کنکور؛ واقعاً کاربردی!",
-      initials: "MA"
-    },
-    {
-      name: "محمد حسینی",
-      role: "دانش‌آموز پایه دهم",
-      text: "با پرسینو نقاط ضعفم را پیدا کردم و نتیجه‌اش فوق‌العاده بود.",
-      initials: "MH"
-    },
-    {
-      name: "نگین خادمی",
-      role: "دانش‌آموز پایه یازدهم",
-      text: "پرسینو استرسم را کم کرد چون هر لحظه می‌توانستم پاسخ سوالم را بگیرم.",
-      initials: "NK"
-    },
-    {
-      name: "پارسا نوروزی",
-      role: "دانش‌آموز پایه دوازدهم",
-      text: "برنامه‌ی شخصی‌سازی شده‌ی پرسینو دقیقاً متناسب با تایم‌ام بود.",
-      initials: "PN"
-    },
-    {
-      name: "الهام کریمی",
-      role: "دانش‌آموز پایه دهم",
-      text: "مبحث‌های سخت فیزیک را با راهنمای گام‌به‌گام AI خیلی سریع یاد گرفتم.",
-      initials: "EK"
-    },
-    {
-      name: "رضا احمدیان",
-      role: "دانش‌آموز پایه دوازدهم",
-      text: "نمونه‌سوال‌های تولیدشده توسط پرسینو دقیقاً شبیه امتحان مدرسه بود!",
-      initials: "RA"
-    }
-  ];
+const reviews = [
+  {
+    name: "سارا محمدی",
+    role: "دانش‌آموز پایه دوازدهم",
+    text: "همیشه توی زیست عقب می‌افتادم و نمی‌دونستم از کجا شروع کنم. پرسینو برام مسیر خوندن رو مشخص کرد و بالاخره از سردرگمی دراومدم.",
+    initials: "SM"
+  },
+  {
+    name: "علی رضایی",
+    role: "دانش‌آموز پایه یازدهم",
+    text: "فکر می‌کردم زیست رو بلدم، ولی پرسینو دقیقاً نشون داد کجاها اشکال دارم. تمرکزم رفت روی همون ضعف‌ها و نتیجه‌ام خیلی بهتر شد.",
+    initials: "AR"
+  },
+  {
+    name: "مریم احمدی",
+    role: "دانش‌آموز پایه دوازدهم",
+    text: "مشکل من حفظ کردن بدون فهم بود. توضیح‌های پرسینو کمک کرد مفهومی بخونم و دیگه مطالب یادم نره.",
+    initials: "MA"
+  },
+  {
+    name: "محمد حسینی",
+    role: "دانش‌آموز پایه دهم",
+    text: "اوایل زیست برام خیلی سنگین بود. پرسینو مبحث‌ها رو ساده و مرحله‌به‌مرحله توضیح داد و ترسم از این درس ریخت.",
+    initials: "MH"
+  },
+  {
+    name: "نگین خادمی",
+    role: "دانش‌آموز پایه یازدهم",
+    text: "استرسم بیشتر به‌خاطر سوال‌های بی‌جوابم بود. با پرسینو هر وقت گیر می‌کردم سریع جواب می‌گرفتم و خیالم راحت‌ شد.",
+    initials: "NK"
+  },
+  {
+    name: "پارسا نوروزی",
+    role: "دانش‌آموز پایه دوازدهم",
+    text: "مشکل اصلی من کمبود وقت بود. پرسینو برام برنامه‌ای چید که دقیقاً با تایم خالی‌ام جور بود و دیگه عقب نمی‌مونم.",
+    initials: "PN"
+  },
+  {
+    name: "الهام کریمی",
+    role: "دانش‌آموز پایه دهم",
+    text: "بعضی مبحث‌های زیست رو اصلاً نمی‌فهمیدم. پرسینو با مثال و توضیح ساده کاری کرد که بالاخره جا بیفته.",
+    initials: "EK"
+  },
+  {
+    name: "رضا احمدیان",
+    role: "دانش‌آموز پایه دوازدهم",
+    text: "توی آزمون‌ها همیشه از نوع سوالات ضربه می‌خوردم. تمرین‌هایی که پرسینو داد باعث شد سر جلسه غافلگیر نشم.",
+    initials: "RA"
+  }
+];
 
   // Responsive handler to determine how many items to show
   useEffect(() => {
@@ -117,7 +117,7 @@ const ReviewsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4"
+            className="text-center text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4"
           >
             تجربه دانش‌آموزان <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#46988F] to-teal-200">موفق</span>
           </motion.h2>
@@ -126,7 +126,7 @@ const ReviewsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-400 font-medium"
+            className="text-center text-base md:text-lg text-gray-400 font-medium"
           >
             ببینید دیگران چگونه با پرسینو مسیر موفقیت خود را ساختند
           </motion.p>
@@ -178,8 +178,8 @@ const ReviewsSection = () => {
                              <Quote className="w-6 h-6 fill-current" />
                         </div>
                         
-                        <p className="text-gray-300 leading-relaxed text-lg font-medium mb-6 relative z-10">
-                            "{review.text}"
+                       <p className="text-gray-300 leading-relaxed text-base md:text-lg font-medium mb-6 relative z-10">
+                          "{review.text}"
                         </p>
                     </div>
 

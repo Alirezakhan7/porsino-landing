@@ -24,9 +24,6 @@ export default function HomeContent() {
     {/* Hero Section */}
     <HeroSection />
 
-      {/* Subjects Section */}
-      <SubjectsSection />
-
       {/* Why Porsino Section */}
       <WhyPorsinoSection />
 
