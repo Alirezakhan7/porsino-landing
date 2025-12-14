@@ -49,9 +49,8 @@ export function BenefitsSection() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
       
       {/* Ambient Glows */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none translate-y-1/2 -translate-x-1/3" />
-
+      <div className="hidden md:block absolute top-0 right-0 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none translate-y-1/2 -translate-x-1/3" />
       <div className="container mx-auto px-6 relative z-10">
         
         {/* --- Header --- */}

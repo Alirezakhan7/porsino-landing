@@ -77,14 +77,15 @@ const ReviewsSection = () => {
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
-      prev + itemsPerPage >= reviews.length ? 0 : prev + 1
+      prev + itemsPerPage >= reviews.length ? 0 : prev + itemsPerPage
     );
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? Math.max(0, reviews.length - itemsPerPage) : prev - 1
-    );
+    setCurrentIndex((prev) => {
+      const next = prev - itemsPerPage;
+      return next < 0 ? Math.max(0, reviews.length - itemsPerPage) : next;
+    });
   };
 
   return (
@@ -94,7 +95,7 @@ const ReviewsSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none"></div>
       
-      {/* Glows hidden on mobile for performance */}
+      {/* Glows (Only Visible on Desktop for Performance) */}
       <div className="hidden md:block absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="hidden md:block absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -130,8 +131,8 @@ const ReviewsSection = () => {
           </motion.p>
         </div>
 
-        {/* --- Navigation Buttons (Unified for Mobile & Desktop) --- */}
-        {/* دکمه قبلی */}
+        {/* --- Navigation Buttons (Unified) --- */}
+        {/* دکمه قبلی (چپ) */}
         <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-12 z-20">
           <button
             onClick={prevSlide}
@@ -142,7 +143,7 @@ const ReviewsSection = () => {
           </button>
         </div>
 
-        {/* دکمه بعدی */}
+        {/* دکمه بعدی (راست) */}
         <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-12 z-20">
           <button
             onClick={nextSlide}
@@ -156,12 +157,22 @@ const ReviewsSection = () => {
         {/* Carousel Window */}
         <div className="relative overflow-hidden px-2 md:px-12 py-8 -my-8">
           <motion.div
-            className="flex gap-0"
+            className="flex gap-0 touch-pan-y cursor-grab active:cursor-grabbing"
             animate={{
-              x: `${currentIndex * (100 / itemsPerPage)}%`
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          >
+                x: `-${currentIndex * (100 / itemsPerPage)}%`
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              drag="x"
+              dragElastic={0.2}
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={(e, { offset }) => {
+                if (offset.x > 50) {
+                  nextSlide();
+                } else if (offset.x < -50) {
+                  prevSlide();
+                }
+              }}
+            >
             {reviews.map((review, index) => (
               <motion.div
                 key={index}
@@ -170,9 +181,9 @@ const ReviewsSection = () => {
                   width: `${100 / itemsPerPage}%`
                 }}
               >
-                <div className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-6 md:p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden">
+                <div className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-6 md:p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden select-none">
 
-                  {/* Hover Glow */}
+                  {/* Hover Glow (Desktop Only) */}
                   <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-[#46988F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div>
@@ -211,7 +222,7 @@ const ReviewsSection = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Indicators (Just Dots) - Removed the arrow buttons from here */}
+        {/* Indicators (Dots) */}
         <div className="flex items-center justify-center gap-2 mt-8">
           {reviews
             .slice(0, reviews.length - (itemsPerPage - 1))
