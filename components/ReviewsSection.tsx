@@ -75,20 +75,20 @@ const ReviewsSection = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // --- 1. بازگرداندن منطق لوپ (Loop) ---
   const nextSlide = () => {
     setCurrentIndex((prev) => {
-      // جلوگیری از رفتن به ایندکس‌های خالی
       const maxIndex = reviews.length - itemsPerPage;
-      const next = prev + 1;
-      return next > maxIndex ? 0 : next;
+      // اگر به ته رسید، برگرد اول (Loop)
+      return prev >= maxIndex ? 0 : prev + 1;
     });
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => {
       const maxIndex = reviews.length - itemsPerPage;
-      const next = prev - 1;
-      return next < 0 ? maxIndex : next;
+      // اگر اول بود، برو ته (Loop)
+      return prev === 0 ? maxIndex : prev - 1;
     });
   };
 
@@ -99,7 +99,6 @@ const ReviewsSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none"></div>
       
-      {/* Glows */}
       <div className="hidden md:block absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="hidden md:block absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -136,30 +135,25 @@ const ReviewsSection = () => {
         </div>
 
         {/* --- Navigation Buttons --- */}
-        {/* دکمه قبلی (سمت راست در حالت RTL مفهومی) */}
         <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-12 z-20">
           <button
-            onClick={prevSlide}
-            aria-label="Previous Slide"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
+            onClick={prevSlide} // دکمه راست = قبلی
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:bg-[#46988F] hover:border-[#46988F] hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
 
-        {/* دکمه بعدی (سمت چپ در حالت RTL مفهومی) */}
         <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-12 z-20">
           <button
-            onClick={nextSlide}
-            aria-label="Next Slide"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
+            onClick={nextSlide} // دکمه چپ = بعدی
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:bg-[#46988F] hover:border-[#46988F] hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
           >
             <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
 
         {/* Carousel Window */}
-        {/* نکته مهم: dir="ltr" می‌دهیم تا محاسبات ریاضی اسلایدر درست شود */}
         <div className="relative overflow-hidden px-2 md:px-12 py-8 -my-8" dir="ltr">
           <motion.div
               className="flex gap-0 touch-pan-y cursor-grab active:cursor-grabbing"
@@ -168,19 +162,24 @@ const ReviewsSection = () => {
               }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               
-              // --- تنظیمات درگ ---
+              // --- 2. اصلاح جهت درگ (Swipe) ---
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.2}
               onDragEnd={(e, { offset }) => {
-                // اصلاح جهت:
-                // کشیدن به راست (> 50) = دیدن اسلاید قبلی
-                if (offset.x > 50) {
-                  prevSlide();
+                const swipe = offset.x;
+
+                // من اینجا جهت‌ها رو کاملاً برعکس کردم:
+                
+                // قبلاً: swipe < -50 (چپ) -> next
+                // حالا: swipe < -50 (چپ) -> prev
+                if (swipe < -50) {
+                   prevSlide(); 
                 } 
-                // کشیدن به چپ (< -50) = دیدن اسلاید بعدی
-                else if (offset.x < -50) {
-                  nextSlide();
+                // قبلاً: swipe > 50 (راست) -> prev
+                // حالا: swipe > 50 (راست) -> next
+                else if (swipe > 50) {
+                   nextSlide();
                 }
               }}
             >
@@ -192,17 +191,13 @@ const ReviewsSection = () => {
                   width: `${100 / itemsPerPage}%`
                 }}
               >
-                {/* داخل کارت دوباره dir="rtl" می‌دهیم تا متن فارسی درست نمایش داده شود */}
                 <div 
                     dir="rtl" 
                     className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-6 md:p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden select-none text-right"
                 >
-
-                  {/* Hover Glow */}
                   <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-[#46988F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div>
-                    {/* Quote Icon */}
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#46988F]/10 flex items-center justify-center text-[#46988F] mb-6 group-hover:scale-110 transition-transform duration-300">
                       <Quote className="w-5 h-5 md:w-6 md:h-6 fill-current" />
                     </div>
@@ -213,7 +208,6 @@ const ReviewsSection = () => {
                   </div>
 
                   <div className="flex items-center gap-4 border-t border-white/5 pt-6 relative z-10">
-                    {/* Initials Avatar */}
                     <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-tr from-[#46988F] to-teal-600 flex items-center justify-center text-white font-bold text-sm shadow-lg">
                       {review.initials || "U"}
                     </div>
@@ -223,7 +217,6 @@ const ReviewsSection = () => {
                       <p className="text-[10px] md:text-xs text-[#46988F] font-bold uppercase tracking-wider truncate">{review.role}</p>
                     </div>
 
-                    {/* 5 Stars */}
                     <div className="mr-auto flex gap-0.5 shrink-0">
                       {[1, 2, 3, 4, 5].map(i => (
                         <Star key={i} className="w-3 h-3 text-yellow-500 fill-yellow-500" />
@@ -237,10 +230,9 @@ const ReviewsSection = () => {
           </motion.div>
         </div>
 
-        {/* Indicators (Dots) */}
+        {/* Indicators */}
         <div className="flex items-center justify-center gap-2 mt-8">
           {reviews
-             // تعداد نقطه‌ها را محدود می‌کنیم تا با تعداد صفحات یکی شود
             .slice(0, reviews.length - (itemsPerPage - 1))
             .map((_, idx) => (
               <button
