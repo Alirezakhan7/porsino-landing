@@ -160,7 +160,7 @@ export function ProjectOverviewSection() {
           >
              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-gray-50 aspect-[4/3] group">
                 <img
-                  src="/assets/novin.jpg"
+                  src="/assets/novin.webp"
                   alt="Students Learning"
                   className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700"
                 />
@@ -221,7 +221,7 @@ export function ProjectOverviewSection() {
           >
              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-gray-50 aspect-[4/3] group">
                 <img
-                  src="/assets/eco.jpg"
+                  src="/assets/eco.webp"
                   alt="Cost Effective Learning"
                   className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-700"
                 />

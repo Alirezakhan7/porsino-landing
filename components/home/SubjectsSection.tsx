@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const subjects = [
   {
    name: "استاد زیست",
-    image: "/assets/zist.jpg",
+    image: "/assets/zist.webp",
     // --- توضیحات جدید و کامل‌تر ---
     features: [
       "تحلیل خط به خط کتاب درسی",
@@ -18,7 +18,7 @@ const subjects = [
   },
   {
     name: "استاد ریاضی",
-    image: "/assets/riazi.jpg",
+    image: "/assets/riazi.webp",
     features: [
       "مسلط به :",
       "تحلیل سریع مسائل",
@@ -30,7 +30,7 @@ const subjects = [
   },
   {
     name: "استاد شیمی",
-    image: "/assets/shimi.jpg",
+    image: "/assets/shimi.webp",
     features: [
       "مسلط به :",
       "تفسیر واکنش‌های شیمیایی",
@@ -42,7 +42,7 @@ const subjects = [
   },
   {
     name: "استاد فیزیک",
-    image: "/assets/physics.jpg",
+    image: "/assets/physics.webp",
     features: [
       "مسلط به :",
       "تحلیل قوانین فیزیک",
