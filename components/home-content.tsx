@@ -1,54 +1,33 @@
-"use client";
-import React from 'react';
-import ReviewsSection from '@/components/ReviewsSection';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
+// components/home-content.tsx  (بدون "use client")
+import dynamic from "next/dynamic";
 
 import CtaSection from "./home/Section";
 import { HeroSection } from "@/components/home/HeroSection";
-import { SubjectsSection } from "@/components/home/SubjectsSection";
 import { WhyPorsinoSection } from "@/components/home/WhyPorsinoSection";
-import { ProjectOverviewSection } from "@/components/home/ProjectOverviewSection";
-import { SupportSection } from "@/components/home/SupportSection";
 import { BenefitsSection } from "@/components/home/BenefitsSection";
 import { AdvantagesSection } from "@/components/home/AdvantagesSection";
+import { ProjectOverviewSection } from "@/components/home/ProjectOverviewSection";
+import { SupportSection } from "@/components/home/SupportSection";
+
+// Reviews را جداگانه Client و Lazy کن
+const ReviewsSection = dynamic(() => import("@/components/ReviewsSection"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function HomeContent() {
   return (
-<div className="flex min-h-screen flex-col" dir="rtl">
-    
-    {/* Hero Section */}
-    <HeroSection />
-
-      {/* Why Porsino Section */}
+    <div className="flex min-h-screen flex-col" dir="rtl">
+      <HeroSection />
       <WhyPorsinoSection />
-
-      {/* Benefits Section */}
       <BenefitsSection />
-
-      {/* Comparison Section */}
       <AdvantagesSection />
-      
-      {/* More About Our Project Section */}
       <ProjectOverviewSection />
-
-      {/* Support Section with Ripple Effect */}
       <SupportSection />
-
-
-      {/* Reviews Section */}
       <ReviewsSection />
-
-
-
-      {/* Final Call to Action */}
-        <section>
-          <CtaSection />
-        </section>
+      <section>
+        <CtaSection />
+      </section>
     </div>
   );
 }
