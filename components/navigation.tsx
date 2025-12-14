@@ -41,7 +41,7 @@ export function Navigation() {
                 className="flex items-center space-x-2 space-x-reverse group"
               >
                 <Image
-                  src="/assets/logo.webp"
+                  src="/assets/logo.png"
                   alt="Porsino Logo"
                   width={40}
                   height={40}
