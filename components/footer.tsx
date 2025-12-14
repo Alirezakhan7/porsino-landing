@@ -23,21 +23,23 @@ const termsLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#46988F] text-white" dir="rtl">
+    // پس‌زمینه کمی تیره‌تر شد تا کنتراست سفید قطعی Pass شود
+    <footer className="bg-[#2F6F69] text-white" dir="rtl">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {/* Column 1 - Brand and Social */}
           <div className="space-y-6">
             <div className="flex items-center space-x-2 space-x-reverse">
-              <Brain className="h-8 w-8 text-white" />
+              <Brain className="h-8 w-8 text-white" aria-hidden="true" />
               <span className="text-xl font-bold text-white">پرسینو</span>
             </div>
 
-            {/* ایمیل: به جای text-white/90 از متن غیرشفاف استفاده شد */}
-            <p className="text-gray-100 font-medium">SUPPORT@PORSINOAI.IR</p>
+            {/* ایمیل: کاملاً سفید (بدون opacity/gray) برای جلوگیری از Fail */}
+            <p className="text-white font-medium">SUPPORT@PORSINOAI.IR</p>
 
             <div>
               <h3 className="mb-4 text-sm font-semibold text-white">شبکه‌های اجتماعی</h3>
+
               <div className="flex space-x-4 space-x-reverse">
                 {socialLinks.map((social) => (
                   <Link
@@ -45,11 +47,11 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    // به جای text-white/80 از رنگ روشنِ غیرشفاف استفاده شد
-                    className="text-gray-100 hover:text-white transition-colors"
                     aria-label={social.label}
+                    // لینک‌ها کاملاً سفید؛ برای hover فقط underline (کم‌ریسک برای contrast)
+                    className="text-white underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                   >
-                    <social.icon className="h-5 w-5" />
+                    <social.icon className="h-5 w-5" aria-hidden="true" />
                     <span className="sr-only">{social.label}</span>
                   </Link>
                 ))}
@@ -65,8 +67,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    // به جای text-white/80 از رنگ روشنِ غیرشفاف استفاده شد
-                    className="text-gray-100 hover:text-white transition-colors"
+                    className="text-white underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                   >
                     {link.name}
                   </Link>
@@ -84,8 +85,7 @@ export function Footer() {
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      // به جای text-white/80 از رنگ روشنِ غیرشفاف استفاده شد
-                      className="text-gray-100 hover:text-white transition-colors"
+                      className="text-white underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
                     >
                       {link.name}
                     </Link>
@@ -101,6 +101,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://trustseal.enamad.ir/?id=623859&Code=CsDAreTu1YYwZJ9NpStdzTCH2PsSgs7j"
+                className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 <img
                   referrerPolicy="origin"
@@ -114,9 +115,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8">
-          {/* کپی‌رایت: به جای text-white/80 از رنگ روشنِ غیرشفاف استفاده شد */}
-          <p className="text-center text-gray-100 text-sm">
+        <div className="mt-12 border-t border-white/20 pt-8">
+          {/* کپی‌رایت: کاملاً سفید برای جلوگیری از Fail روی متن کوچک */}
+          <p className="text-center text-white text-sm">
             © {new Date().getFullYear()} پرسینو. تمامی حقوق محفوظ است.
           </p>
         </div>
