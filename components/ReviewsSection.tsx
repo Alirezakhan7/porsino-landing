@@ -174,14 +174,13 @@ const ReviewsSection = () => {
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={(e, { offset }) => {
-              // در حالت LTR (که ما فورس کردیم):
-              // کشیدن به چپ (منفی) = می‌خواهیم بعدی را ببینیم
-              if (offset.x < -50) {
-                nextSlide();
+              // اگر انگشت را به سمت راست کشیدید (عدد مثبت)
+              if (offset.x > 50) {
+                prevSlide(); // قبلاً اینجا nextSlide بود یا برعکس عمل می‌کرد
               } 
-              // کشیدن به راست (مثبت) = می‌خواهیم قبلی را ببینیم
-              else if (offset.x > 50) {
-                prevSlide();
+              // اگر انگشت را به سمت چپ کشیدید (عدد منفی)
+              else if (offset.x < -50) {
+                nextSlide();
               }
             }}
           >
