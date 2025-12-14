@@ -76,15 +76,19 @@ const ReviewsSection = () => {
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev + itemsPerPage >= reviews.length ? 0 : prev + itemsPerPage
-    );
+    setCurrentIndex((prev) => {
+      // جلوگیری از رفتن به ایندکس‌های خالی
+      const maxIndex = reviews.length - itemsPerPage;
+      const next = prev + 1;
+      return next > maxIndex ? 0 : next;
+    });
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => {
-      const next = prev - itemsPerPage;
-      return next < 0 ? Math.max(0, reviews.length - itemsPerPage) : next;
+      const maxIndex = reviews.length - itemsPerPage;
+      const next = prev - 1;
+      return next < 0 ? maxIndex : next;
     });
   };
 
@@ -95,7 +99,7 @@ const ReviewsSection = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A] pointer-events-none"></div>
       
-      {/* Glows (Only Visible on Desktop for Performance) */}
+      {/* Glows */}
       <div className="hidden md:block absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#46988F]/5 blur-[120px] rounded-full pointer-events-none"></div>
       <div className="hidden md:block absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none"></div>
 
@@ -131,48 +135,56 @@ const ReviewsSection = () => {
           </motion.p>
         </div>
 
-        {/* --- Navigation Buttons (Unified) --- */}
-        {/* دکمه قبلی (چپ) */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-12 z-20">
+        {/* --- Navigation Buttons --- */}
+        {/* دکمه قبلی (سمت راست در حالت RTL مفهومی) */}
+        <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-12 z-20">
           <button
             onClick={prevSlide}
             aria-label="Previous Slide"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
-          >
-            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-          </button>
-        </div>
-
-        {/* دکمه بعدی (راست) */}
-        <div className="absolute top-1/2 -translate-y-1/2 right-2 md:right-12 z-20">
-          <button
-            onClick={nextSlide}
-            aria-label="Next Slide"
             className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
           >
             <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
         </div>
 
+        {/* دکمه بعدی (سمت چپ در حالت RTL مفهومی) */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-2 md:left-12 z-20">
+          <button
+            onClick={nextSlide}
+            aria-label="Next Slide"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 bg-black/40 md:bg-white/5 hover:bg-[#46988F] hover:border-[#46988F] text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-[#46988F]/20 hover:scale-110 active:scale-95"
+          >
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+          </button>
+        </div>
+
         {/* Carousel Window */}
-        <div className="relative overflow-hidden px-2 md:px-12 py-8 -my-8">
+        {/* نکته مهم: dir="ltr" می‌دهیم تا محاسبات ریاضی اسلایدر درست شود */}
+        <div className="relative overflow-hidden px-2 md:px-12 py-8 -my-8" dir="ltr">
           <motion.div
             className="flex gap-0 touch-pan-y cursor-grab active:cursor-grabbing"
             animate={{
-                x: `-${currentIndex * (100 / itemsPerPage)}%`
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              drag="x"
-              dragElastic={0.2}
-              dragConstraints={{ left: 0, right: 0 }}
-              onDragEnd={(e, { offset }) => {
-                if (offset.x > 50) {
-                  nextSlide();
-                } else if (offset.x < -50) {
-                  prevSlide();
-                }
-              }}
-            >
+              // حرکت به سمت منفی X (چپ) برای دیدن آیتم‌های بعدی
+              x: `-${currentIndex * (100 / itemsPerPage)}%`
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            
+            // --- تنظیمات درگ ---
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, { offset }) => {
+              // در حالت LTR (که ما فورس کردیم):
+              // کشیدن به چپ (منفی) = می‌خواهیم بعدی را ببینیم
+              if (offset.x < -50) {
+                nextSlide();
+              } 
+              // کشیدن به راست (مثبت) = می‌خواهیم قبلی را ببینیم
+              else if (offset.x > 50) {
+                prevSlide();
+              }
+            }}
+          >
             {reviews.map((review, index) => (
               <motion.div
                 key={index}
@@ -181,9 +193,13 @@ const ReviewsSection = () => {
                   width: `${100 / itemsPerPage}%`
                 }}
               >
-                <div className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-6 md:p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden select-none">
+                {/* داخل کارت دوباره dir="rtl" می‌دهیم تا متن فارسی درست نمایش داده شود */}
+                <div 
+                    dir="rtl" 
+                    className="h-full bg-white/5 backdrop-blur-sm rounded-[2rem] p-6 md:p-8 border border-white/10 hover:border-[#46988F]/30 hover:bg-white/[0.07] transition-all duration-500 flex flex-col justify-between group relative overflow-hidden select-none text-right"
+                >
 
-                  {/* Hover Glow (Desktop Only) */}
+                  {/* Hover Glow */}
                   <div className="hidden md:block absolute inset-0 bg-gradient-to-br from-[#46988F]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div>
@@ -225,6 +241,7 @@ const ReviewsSection = () => {
         {/* Indicators (Dots) */}
         <div className="flex items-center justify-center gap-2 mt-8">
           {reviews
+             // تعداد نقطه‌ها را محدود می‌کنیم تا با تعداد صفحات یکی شود
             .slice(0, reviews.length - (itemsPerPage - 1))
             .map((_, idx) => (
               <button
