@@ -158,15 +158,16 @@ export function HeroSection() {
                 }}
               >
                 <Image
-                  src="/assets/chatbot_porsino.png"
-                  alt="اپلیکیشن هوش مصنوعی پرسینو"
-                  width={1200}
-                  height={1600}
-                  priority
-                  fetchPriority="high"
-                  sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 520px"
-                  className="w-full h-auto rounded-2xl"
-                />
+                    src="/assets/chatbot_porsino.webp"
+                    alt="اپلیکیشن هوش مصنوعی پرسینو"
+                    width={900}
+                    height={600}
+                    priority
+                    fetchPriority="high"
+                    sizes="(max-width: 768px) 100vw, 520px"
+                    quality={70}
+                    className="w-full h-auto rounded-2xl"
+                  />
               </motion.div>
             </div>
           </motion.div>
