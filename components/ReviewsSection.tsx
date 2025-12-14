@@ -210,17 +210,28 @@ const reviews = [
         </div>
         
         {/* Mobile Controls (Dots) */}
-        <div className="flex justify-center gap-2 mt-8 md:hidden">
-            {reviews.slice(0, reviews.length - (itemsPerPage - 1)).map((_, idx) => (
+          <div className="flex justify-center gap-2 mt-8 md:hidden">
+            {reviews.slice(0, reviews.length - (itemsPerPage - 1)).map((_, idx) => {
+              const isActive = Math.floor(currentIndex) === idx;
+
+              return (
                 <button
-                    key={idx}
-                    onClick={() => setCurrentIndex(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                        Math.floor(currentIndex) === idx ? "w-8 bg-[#46988F]" : "w-2 bg-white/20"
+                  key={idx}
+                  type="button"
+                  onClick={() => setCurrentIndex(idx)}
+                  aria-label={`رفتن به نظر شماره ${idx + 1}`}
+                  className="p-3"  // ناحیه لمس را بزرگ می‌کند (حدود 24px اطراف)
+                >
+                  <span
+                    className={`block h-2 rounded-full transition-all duration-300 ${
+                      isActive ? "w-8 bg-[#46988F]" : "w-2 bg-white/20"
                     }`}
-                />
-            ))}
-        </div>
+                  />
+                </button>
+              );
+            })}
+          </div>
+
 
       </div>
     </section>
