@@ -210,27 +210,59 @@ const reviews = [
         </div>
         
         {/* Mobile Controls (Dots) */}
-          <div className="flex justify-center gap-2 mt-8 md:hidden">
-            {reviews.slice(0, reviews.length - (itemsPerPage - 1)).map((_, idx) => {
-              const isActive = Math.floor(currentIndex) === idx;
+            <div className="flex items-center justify-center gap-4 mt-8 md:hidden">
+            {/* Prev */}
+            <button
+              type="button"
+              aria-label="اسلاید قبلی"
+              onClick={() =>
+                setCurrentIndex((prev) =>
+                  prev === 0 ? reviews.length - 1 : prev - 1
+                )
+              }
+              className="h-10 w-10 rounded-full bg-white/20 text-white flex items-center justify-center"
+            >
+              ‹
+            </button>
 
-              return (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setCurrentIndex(idx)}
-                  aria-label={`رفتن به نظر شماره ${idx + 1}`}
-                  className="p-3"  // ناحیه لمس را بزرگ می‌کند (حدود 24px اطراف)
-                >
-                  <span
-                    className={`block h-2 rounded-full transition-all duration-300 ${
-                      isActive ? "w-8 bg-[#46988F]" : "w-2 bg-white/20"
-                    }`}
-                  />
-                </button>
-              );
-            })}
+            {/* Dots */}
+            <div className="flex gap-2">
+              {reviews
+                .slice(0, reviews.length - (itemsPerPage - 1))
+                .map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    aria-label={`رفتن به اسلاید ${idx + 1}`}
+                    onClick={() => setCurrentIndex(idx)}
+                    className="p-3"
+                  >
+                    <span
+                      className={`block h-2 rounded-full transition-all duration-300 ${
+                        Math.floor(currentIndex) === idx
+                          ? "w-8 bg-[#46988F]"
+                          : "w-2 bg-white/20"
+                      }`}
+                    />
+                  </button>
+                ))}
+            </div>
+
+            {/* Next */}
+            <button
+              type="button"
+              aria-label="اسلاید بعدی"
+              onClick={() =>
+                setCurrentIndex((prev) =>
+                  prev === reviews.length - 1 ? 0 : prev + 1
+                )
+              }
+              className="h-10 w-10 rounded-full bg-white/20 text-white flex items-center justify-center"
+            >
+              ›
+            </button>
           </div>
+
 
 
       </div>
