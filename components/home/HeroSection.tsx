@@ -2,17 +2,30 @@
 "use client";
 
 import type { Variants } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useMotionValue,
   useSpring,
   useMotionTemplate,
+  useReducedMotion,
 } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
+  const reduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Client-only: keep behavior identical on desktop, but enable mobile-specific lightening.
+    const mql = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener?.("change", update);
+    return () => mql.removeEventListener?.("change", update);
+  }, []);
+
   // --- 1. Animation Variants (Existing) ---
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -26,22 +39,21 @@ export function HeroSection() {
   };
 
   const itemVariants: Variants = {
-  hidden: {
-    opacity: 0.001,
-    y: 20,
-    filter: "blur(4px)",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.6,
-      ease: [0.4, 0, 1, 1],
+    hidden: {
+      opacity: 0.001,
+      y: 20,
+      filter: "blur(4px)",
     },
-  },
-};
-
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.6,
+        ease: [0.4, 0, 1, 1],
+      },
+    },
+  };
 
   // --- 2. Pointer Halo Logic (Framer Motion) ---
   const mouseX = useMotionValue(0);
@@ -69,7 +81,7 @@ export function HeroSection() {
     >
       {/* --- BACKGROUND LAYERS --- */}
 
-      {/* A. Particle Network Background (Updated) */}
+      {/* A. Particle Network Background (Mobile-lightened) */}
       <ParticleBackground />
 
       {/* B. Pointer Halo Effect */}
@@ -147,26 +159,36 @@ export function HeroSection() {
             <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[450px] lg:max-w-[520px] aspect-[3/4] relative">
               <motion.div
                 className="relative w-full h-full"
-                animate={{
-                  y: [0, -15, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  repeatType: "loop",
-                }}
+                // Keep the floating effect on mobile, but lighten it.
+                animate={
+                  reduceMotion
+                    ? undefined
+                    : {
+                        y: [0, isMobile ? -6 : -15, 0],
+                      }
+                }
+                transition={
+                  reduceMotion
+                    ? undefined
+                    : {
+                        duration: isMobile ? 6 : 4,
+                        ease: "easeInOut",
+                        repeat: Infinity,
+                        repeatType: "loop",
+                      }
+                }
               >
                 <Image
-                    src="/assets/chatbot_porsino.webp"
-                    alt="اپلیکیشن هوش مصنوعی پرسینو"
-                    width={900}
-                    height={600}
-                    priority
-                    fetchPriority="high"
-                    sizes="(max-width: 768px) 100vw, 520px"
-                    className="w-full h-auto rounded-2xl"
-                  />
+                  src="/assets/chatbot_porsino.webp"
+                  alt="اپلیکیشن هوش مصنوعی پرسینو"
+                  width={900}
+                  height={600}
+                  priority
+                  fetchPriority="high"
+                  // Prevent mobile from downloading an unnecessarily large source.
+                  sizes="(max-width: 640px) 320px, (max-width: 768px) 380px, 520px"
+                  className="w-full h-auto rounded-2xl"
+                />
               </motion.div>
             </div>
           </motion.div>
@@ -197,17 +219,29 @@ function ParticleBackground() {
     let particles: Particle[] = [];
     let parent: HTMLElement | null = null;
 
+    // Mobile-specific lightening (keep the effect, reduce cost)
+    const mqlMobile = window.matchMedia("(max-width: 768px)");
+    const mqlReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const isMobile = mqlMobile.matches;
+    const prefersReducedMotion = mqlReduceMotion.matches;
+
     // Mouse state for repulsion logic
-    const mouse = { x: -9999, y: -9999, radius: 120 };
+    const mouse = { x: -9999, y: -9999, radius: isMobile ? 90 : 120 };
 
     // --- Configuration ---
     const getParticleCount = (width: number) => {
-      if (width < 768) return 50; // Mobile
+      if (prefersReducedMotion) return 15;
+      if (width < 768) return 25; // Mobile
       return 130; // Desktop
     };
 
-    const connectionDistance = 140;
-    const baseSpeed = 0.6;
+    const connectionDistance = isMobile ? 90 : 140;
+    const baseSpeed = prefersReducedMotion ? 0.15 : isMobile ? 0.35 : 0.6;
+
+    // FPS throttle on mobile to reduce main-thread pressure
+    const targetFps = isMobile ? 30 : 60;
+    const frameInterval = 1000 / targetFps;
+    let lastFrameTime = 0;
 
     // --- Particle Class ---
     class Particle {
@@ -296,7 +330,13 @@ function ParticleBackground() {
       mouse.y = -9999;
     };
 
-    const animate = () => {
+    const animate = (time = 0) => {
+      if (time - lastFrameTime < frameInterval) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+      lastFrameTime = time;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle) => {
@@ -335,7 +375,7 @@ function ParticleBackground() {
       parent.addEventListener("mouseleave", handleMouseLeave);
     }
 
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
