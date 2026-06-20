@@ -82,7 +82,7 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-                  href="https://chat.porsinoai.or/login"
+                  href="https://chat.porsinoai.ir/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block border border-gray-200 text-sm text-black text-center px-4 py-2 rounded-lg hover:bg-black/10 transition"
@@ -95,7 +95,7 @@ export function Navigation() {
                 whileTap={{ scale: 0.95 }}
               >
                 <a
-                  href="https://chat.porsinoai.or/login?mode=signup
+                  href="https://chat.porsinoai.ir/login?mode=signup
 "
                   target="_blank"
                   rel="noopener noreferrer"
@@ -148,7 +148,7 @@ export function Navigation() {
               ))}
               <div className="pt-4 space-y-3 border-t border-[#46988F]/10">
                 <a
-                  href="https://chat.porsinoai.or"
+                  href="https://chat.porsinoai.ir"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -160,7 +160,7 @@ export function Navigation() {
                   </Button>
                 </a>
                 <a
-                  href="https://chat.porsinoai.or/login?mode=signup"
+                  href="https://chat.porsinoai.ir/login?mode=signup"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -184,7 +184,7 @@ export default function Pricing() {
                       ? 'bg-[#46988F] hover:bg-[#5AB5AC] text-white' 
                       : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                   }`}
-                    onClick={() => window.location.href = "https://chat.porsinoai.or/payment"}
+                    onClick={() => window.location.href = "https://chat.porsinoai.ir/payment"}
                 >
                   انتخاب این پلن
                 </Button>

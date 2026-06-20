@@ -125,7 +125,7 @@ const CtaSection = () => {
             </p>
 
             <a
-              href="https://chat.porsinoai.or/login?mode=signup"
+              href="https://chat.porsinoai.ir/login?mode=signup"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto group"

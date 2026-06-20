@@ -134,7 +134,7 @@ export function HeroSection() {
             {/* Hero Button */}
             <motion.div variants={itemVariants} className="flex justify-center">
               <a
-                href="https://chat.porsinoai.or/"
+                href="https://chat.porsinoai.ir/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
