@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://porsino.org
+Host: https://porsinoai.or
 
 # Sitemaps
-Sitemap: https://porsino.org/sitemap.xml
+Sitemap: https://porsinoai.or/sitemap.xml

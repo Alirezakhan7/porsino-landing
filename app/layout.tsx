@@ -21,7 +21,7 @@ const yekanBakh = localFont({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://porsino.org'), // این خط ارور رو حل می‌کنه
+  metadataBase: new URL('https://porsinoai.or'), // این خط ارور رو حل می‌کنه
   title: 'پرسینو | دستیار هوش مصنوعی کنکوری',
   description: 'پرسینو یک دستیار هوش مصنوعی برای یادگیری مفهومی، حل تست مرحله‌به‌مرحله و تمرین شخصی‌سازی‌شده است.',
   icons: {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'پرسینو | دستیار هوش مصنوعی کنکوری',
     description: 'پرسینو یک دستیار هوش مصنوعی برای یادگیری مفهومی، حل تست مرحله‌به‌مرحله و تمرین شخصی‌سازی‌شده است.',
-    url: 'https://porsino.org',
+    url: 'https://porsinoai.or',
     siteName: 'Porsino',
     locale: 'fa_IR',
     type: 'website',
@@ -70,8 +70,8 @@ export default function RootLayout({
                 '@context': 'https://schema.org',
                 '@type': 'Organization',
                 name: 'Porsino',
-                url: 'https://porsino.org',
-                logo: 'https://porsino.org/assets/favicon.ico',
+                url: 'https://porsinoai.or',
+                logo: 'https://porsinoai.or/assets/favicon.ico',
                 sameAs: [
                   'https://www.instagram.com/porsinoai',
                   'https://www.linkedin.com/company/porsinoai',
@@ -89,19 +89,19 @@ export default function RootLayout({
         '@type': 'ListItem',
         position: 1,
         name: 'خانه',
-        item: 'https://porsino.org',
+        item: 'https://porsinoai.or',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'سرویس‌ها',
-        item: 'https://porsino.org/services',
+        item: 'https://porsinoai.or/services',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: 'ارتباط با ما',
-        item: 'https://porsino.org/contact',
+        item: 'https://porsinoai.or/contact',
       },
     ],
   })}
@@ -137,10 +137,10 @@ export default function RootLayout({
           {JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            url: 'https://porsino.org',
+            url: 'https://porsinoai.or',
             potentialAction: {
               '@type': 'SearchAction',
-              target: 'https://porsino.org/search?q={search_term_string}',
+              target: 'https://porsinoai.or/search?q={search_term_string}',
               'query-input': 'required name=search_term_string',
             },
           })}

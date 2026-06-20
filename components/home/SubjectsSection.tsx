@@ -14,7 +14,7 @@ const subjects = [
       "پوشش تمام نکات ترکیبی و مفهومی",
       "بانک سوالات تستی و تشریحی",
     ],
-    path: "https://chat.porsino.org/",
+    path: "https://chat.porsinoai.or/",
     status: 'active',
   },
   {

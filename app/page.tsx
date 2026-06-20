@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'پرسینو | دستیار هوش مصنوعی کنکوری',
     description: 'یادگیری عمیق و مرحله‌به‌مرحله با هوش مصنوعی؛ مخصوص کنکور.',
-    url: 'https://porsino.org',
+    url: 'https://porsinoai.or',
     siteName: 'Porsino',
     locale: 'fa_IR',
     type: 'website',

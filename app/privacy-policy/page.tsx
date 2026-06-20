@@ -157,7 +157,7 @@ export default function PrivacyPolicy() {
             </div>
             <p className="text-gray-700 leading-relaxed">
               در صورت هرگونه تغییر اساسی در این سیاست، کاربران از طریق سایت یا ایمیل مطلع خواهند شد. برای پرسش، پیشنهاد یا درخواست حذف اطلاعات، لطفاً از طریق ایمیل یا پشتیبانی تلگرام با ما در ارتباط باشید.<br />
-              <span className="font-semibold">ایمیل:</span> Support@Porsino.org<br />
+              <span className="font-semibold">ایمیل:</span> Support@porsinoai.or<br />
               <span className="font-semibold">تلگرام پشتیبانی:</span> Porsino_Support@
             </p>
             <div className="text-gray-500 text-sm mt-4">تاریخ آخرین به‌روزرسانی: تیر ۱۴۰۳</div>

@@ -79,7 +79,7 @@ export default function Contact() {
               <div className="space-y-4 text-gray-600">
                 <div className="flex items-center space-x-4 space-x-reverse">
                   <Mail className="h-5 w-5 text-[#46988F]" />
-                  <span>support@porsino.org</span>
+                  <span>support@porsinoai.or</span>
                 </div>
                 <div className="flex items-center space-x-4 space-x-reverse">
                   <Phone className="h-5 w-5 text-[#46988F]" />
